@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,16 +53,32 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				muslim: {
+					DEFAULT: '#2C5F2D',
+					light: '#97BC62',
+					dark: '#0A2F0B'
+				},
+				christian: {
+					DEFAULT: '#9B2226',
+					light: '#E9D8A6',
+					dark: '#6A0F12'
+				},
+				gold: {
+					DEFAULT: '#D4AF37',
+					light: '#F9E076',
+					dark: '#9C7C1D'
+				},
+				silver: {
+					DEFAULT: '#C0C0C0',
+					light: '#E8E8E8',
+					dark: '#7D7D7D'
+				},
+				aged: {
+					DEFAULT: '#967E76',
+					light: '#D7C0AE',
+					dark: '#635649'
+				},
+				parchment: '#F5F0E1',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -70,25 +87,36 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'coin-flip': {
+					'0%, 100%': { transform: 'rotateY(0deg)' },
+					'50%': { transform: 'rotateY(180deg)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'coin-flip': 'coin-flip 2s ease-in-out',
+				'float': 'float 4s ease-in-out infinite'
+			},
+			fontFamily: {
+				'medieval': ['Cinzel', 'serif'],
+				'manuscript': ['Cormorant Garamond', 'serif'],
+				'sans': ['Inter', 'sans-serif']
+			},
+			backgroundImage: {
+				'parchment': 'url("/parchment-bg.jpg")',
+				'ancient-map': 'url("/ancient-map-bg.jpg")',
 			}
 		}
 	},
