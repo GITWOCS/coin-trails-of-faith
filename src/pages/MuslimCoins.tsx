@@ -1,7 +1,46 @@
-
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
+import InteractiveCoinRow from "@/components/home/InteractiveCoinRow";
+
+const featuredMuslimCoins = [
+  {
+    id: "fatimid-dinar",
+    name: "Fatimid Dinar",
+    image: "/placeholder.svg",
+    era: "10th-12th Century",
+    material: "Gold",
+    origin: "Fatimid Caliphate",
+    type: "gold",
+  },
+  {
+    id: "ayyubid-dinar",
+    name: "Ayyubid Dinar",
+    image: "/placeholder.svg",
+    era: "12th-13th Century",
+    material: "Gold",
+    origin: "Ayyubid Dynasty",
+    type: "gold",
+  },
+  {
+    id: "umayyad-dinar",
+    name: "Umayyad Dinar",
+    image: "/placeholder.svg",
+    era: "7th-8th Century",
+    material: "Gold",
+    origin: "Umayyad Caliphate",
+    type: "gold",
+  },
+  {
+    id: "mamluk-dirham",
+    name: "Mamluk Dirham",
+    image: "/placeholder.svg",
+    era: "13th-16th Century",
+    material: "Silver",
+    origin: "Mamluk Sultanate",
+    type: "silver",
+  },
+];
 
 const MuslimCoins = () => {
   return (
@@ -13,7 +52,16 @@ const MuslimCoins = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl font-medieval text-center mb-8">Muslim Coins</h1>
-          
+
+          {/* Featured Coins Interactive Row */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-medieval text-center mb-2">Featured Coins</h2>
+            <p className="text-center mb-4 text-gray-700">
+              Hover to pause—click any coin to see both sides and a full analysis!
+            </p>
+            <InteractiveCoinRow coins={featuredMuslimCoins} direction="left" speed={18} />
+          </div>
+
           <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm shadow-lg rounded-lg p-6">
             <p className="mb-6 text-lg">
               Muslim coins during the Crusades era represent the sophisticated monetary systems of Islamic 

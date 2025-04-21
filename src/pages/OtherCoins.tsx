@@ -1,7 +1,46 @@
-
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
+import InteractiveCoinRow from "@/components/home/InteractiveCoinRow";
+
+const featuredOtherCoins = [
+  {
+    id: "norman-trilingual",
+    name: "Norman Trilingual Coin",
+    image: "/placeholder.svg",
+    era: "12th Century",
+    material: "Gold",
+    origin: "Kingdom of Sicily",
+    type: "gold",
+  },
+  {
+    id: "ethiopian-christian",
+    name: "Ethiopian Christian Coin",
+    image: "/placeholder.svg",
+    era: "12th-13th Century",
+    material: "Gold",
+    origin: "Ethiopian Kingdom",
+    type: "gold",
+  },
+  {
+    id: "seljuk-coin",
+    name: "Seljuk Coin",
+    image: "/placeholder.svg",
+    era: "11th-13th Century",
+    material: "Silver",
+    origin: "Sultanate of Rum",
+    type: "silver",
+  },
+  {
+    id: "genoese-trade",
+    name: "Genoese Trade Coin",
+    image: "/placeholder.svg",
+    era: "13th-14th Century",
+    material: "Silver",
+    origin: "Genoa, Italy",
+    type: "silver",
+  },
+];
 
 const OtherCoins = () => {
   return (
@@ -13,7 +52,16 @@ const OtherCoins = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl font-medieval text-center mb-8">Other Coins</h1>
-          
+
+          {/* Featured Coins Interactive Row */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-medieval text-center mb-2">Featured Coins</h2>
+            <p className="text-center mb-4 text-gray-700">
+              Hover to pause—click any coin to see both sides and a full analysis!
+            </p>
+            <InteractiveCoinRow coins={featuredOtherCoins} direction="left" speed={18} />
+          </div>
+
           <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm shadow-lg rounded-lg p-6">
             <p className="mb-6 text-lg">
               Beyond the direct Christian-Muslim conflict zones, the Crusades era saw significant 

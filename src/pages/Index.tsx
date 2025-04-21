@@ -1,59 +1,9 @@
-
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import Hero from "@/components/home/Hero";
 import CategoryCard from "@/components/home/CategoryCard";
-import CoinCard from "@/components/coin/CoinCard";
-import InteractiveCoinRow from "@/components/home/InteractiveCoinRow";
 import TimelineComponent from "@/components/common/TimelineComponent";
-
-const featuredCoins = [
-  {
-    id: "fatimid-dinar",
-    name: "Fatimid Dinar",
-    image: "/placeholder.svg",
-    era: "10th-12th Century",
-    material: "Gold",
-    origin: "Fatimid Caliphate",
-    type: "gold" as const,
-  },
-  {
-    id: "crusader-denier",
-    name: "Cross Denier",
-    image: "/placeholder.svg",
-    era: "12th Century",
-    material: "Silver",
-    origin: "Kingdom of Jerusalem",
-    type: "silver" as const,
-  },
-  {
-    id: "norman-trilingual",
-    name: "Norman Trilingual Coin",
-    image: "/placeholder.svg",
-    era: "12th Century",
-    material: "Gold",
-    origin: "Kingdom of Sicily",
-    type: "gold" as const,
-  },
-  {
-    id: "ayyubid-dinar",
-    name: "Ayyubid Dinar",
-    image: "/placeholder.svg",
-    era: "12th-13th Century",
-    material: "Gold",
-    origin: "Ayyubid Dynasty",
-    type: "gold" as const,
-  },
-  {
-    id: "venetian-grosso",
-    name: "Venetian Grosso",
-    image: "/placeholder.svg",
-    era: "13th Century",
-    material: "Silver",
-    origin: "Republic of Venice",
-    type: "silver" as const,
-  },
-];
+import InteractiveMapPlaceholder from "@/components/common/InteractiveMapPlaceholder";
 
 const timelineEvents = [
   {
@@ -101,7 +51,6 @@ const Index = () => {
           revealing the complex interactions between Christian and Muslim
           civilizations through their numismatic heritage.
         </p>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <CategoryCard
             title="Muslim Coins"
@@ -153,17 +102,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Coins Carousel */}
+      {/* Interactive Circulation Map Section */}
       <section className="bg-white/50 py-16">
         <div className="page-container">
-          <h2 className="section-heading">Featured Coins</h2>
+          <h2 className="section-heading">Interactive Circulation Map</h2>
           <p className="text-center max-w-3xl mx-auto mb-8">
-            Hover to pause the animation and click on any coin to see both sides
+            Explore the broad circulation and influence of various coins across the medieval Mediterranean and the Crusader world. Drag or zoom to navigate. Coin hotspots will be interactive soon!
           </p>
+          <div className="flex justify-center">
+            <div className="w-full max-w-4xl h-[400px] rounded-lg overflow-hidden shadow-lg">
+              <InteractiveMapPlaceholder />
+            </div>
+          </div>
         </div>
-
-        <InteractiveCoinRow coins={featuredCoins} direction="left" speed={15} />
-        <InteractiveCoinRow coins={[...featuredCoins].reverse()} direction="right" speed={20} />
       </section>
 
       {/* Timeline Section */}
@@ -172,7 +123,6 @@ const Index = () => {
         <p className="text-center max-w-3xl mx-auto mb-12">
           Follow the historical events that shaped the coinage of the Crusades era
         </p>
-
         <TimelineComponent events={timelineEvents} />
       </section>
 

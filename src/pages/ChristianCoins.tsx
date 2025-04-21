@@ -1,7 +1,46 @@
-
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
+import InteractiveCoinRow from "@/components/home/InteractiveCoinRow";
+
+const featuredChristianCoins = [
+  {
+    id: "cross-denier",
+    name: "Cross Denier",
+    image: "/placeholder.svg",
+    era: "12th Century",
+    material: "Silver",
+    origin: "Kingdom of Jerusalem",
+    type: "silver",
+  },
+  {
+    id: "denier-antioch",
+    name: "Denier of Bohemond III",
+    image: "/placeholder.svg",
+    era: "12th Century",
+    material: "Silver",
+    origin: "Antioch",
+    type: "silver",
+  },
+  {
+    id: "constantinople-latin",
+    name: "Latin Kingdom Constantinople",
+    image: "/placeholder.svg",
+    era: "13th Century",
+    material: "Gold",
+    origin: "Constantinople",
+    type: "gold",
+  },
+  {
+    id: "richard-i",
+    name: "Coin of Richard I",
+    image: "/placeholder.svg",
+    era: "Late 12th Century",
+    material: "Gold",
+    origin: "England & Holy Land",
+    type: "gold",
+  },
+];
 
 const ChristianCoins = () => {
   return (
@@ -13,7 +52,16 @@ const ChristianCoins = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl font-medieval text-center mb-8">Christian Coins</h1>
-          
+
+          {/* Featured Coins Interactive Row */}
+          <div className="mb-10">
+            <h2 className="text-2xl font-medieval text-center mb-2">Featured Coins</h2>
+            <p className="text-center mb-4 text-gray-700">
+              Hover to pause—click any coin to see both sides and a full analysis!
+            </p>
+            <InteractiveCoinRow coins={featuredChristianCoins} direction="left" speed={18} />
+          </div>
+
           <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm shadow-lg rounded-lg p-6">
             <p className="mb-6 text-lg">
               Christian coins from the Crusader era represent a fascinating intersection of faith,
