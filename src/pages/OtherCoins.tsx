@@ -1,3 +1,4 @@
+
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
@@ -11,7 +12,7 @@ const featuredOtherCoins = [
     era: "12th Century",
     material: "Gold",
     origin: "Kingdom of Sicily",
-    type: "gold",
+    type: "gold" as const,
   },
   {
     id: "ethiopian-christian",
@@ -20,7 +21,7 @@ const featuredOtherCoins = [
     era: "12th-13th Century",
     material: "Gold",
     origin: "Ethiopian Kingdom",
-    type: "gold",
+    type: "gold" as const,
   },
   {
     id: "seljuk-coin",
@@ -29,7 +30,7 @@ const featuredOtherCoins = [
     era: "11th-13th Century",
     material: "Silver",
     origin: "Sultanate of Rum",
-    type: "silver",
+    type: "silver" as const,
   },
   {
     id: "genoese-trade",
@@ -38,7 +39,7 @@ const featuredOtherCoins = [
     era: "13th-14th Century",
     material: "Silver",
     origin: "Genoa, Italy",
-    type: "silver",
+    type: "silver" as const,
   },
 ];
 

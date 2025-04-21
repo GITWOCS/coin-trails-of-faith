@@ -1,3 +1,4 @@
+
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
@@ -11,7 +12,7 @@ const featuredMuslimCoins = [
     era: "10th-12th Century",
     material: "Gold",
     origin: "Fatimid Caliphate",
-    type: "gold",
+    type: "gold" as const,
   },
   {
     id: "ayyubid-dinar",
@@ -20,7 +21,7 @@ const featuredMuslimCoins = [
     era: "12th-13th Century",
     material: "Gold",
     origin: "Ayyubid Dynasty",
-    type: "gold",
+    type: "gold" as const,
   },
   {
     id: "umayyad-dinar",
@@ -29,7 +30,7 @@ const featuredMuslimCoins = [
     era: "7th-8th Century",
     material: "Gold",
     origin: "Umayyad Caliphate",
-    type: "gold",
+    type: "gold" as const,
   },
   {
     id: "mamluk-dirham",
@@ -38,7 +39,7 @@ const featuredMuslimCoins = [
     era: "13th-16th Century",
     material: "Silver",
     origin: "Mamluk Sultanate",
-    type: "silver",
+    type: "silver" as const,
   },
 ];
 

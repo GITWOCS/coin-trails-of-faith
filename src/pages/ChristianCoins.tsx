@@ -1,3 +1,4 @@
+
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
@@ -11,7 +12,7 @@ const featuredChristianCoins = [
     era: "12th Century",
     material: "Silver",
     origin: "Kingdom of Jerusalem",
-    type: "silver",
+    type: "silver" as const,
   },
   {
     id: "denier-antioch",
@@ -20,7 +21,7 @@ const featuredChristianCoins = [
     era: "12th Century",
     material: "Silver",
     origin: "Antioch",
-    type: "silver",
+    type: "silver" as const,
   },
   {
     id: "constantinople-latin",
@@ -29,7 +30,7 @@ const featuredChristianCoins = [
     era: "13th Century",
     material: "Gold",
     origin: "Constantinople",
-    type: "gold",
+    type: "gold" as const,
   },
   {
     id: "richard-i",
@@ -38,7 +39,7 @@ const featuredChristianCoins = [
     era: "Late 12th Century",
     material: "Gold",
     origin: "England & Holy Land",
-    type: "gold",
+    type: "gold" as const,
   },
 ];
 
