@@ -1,8 +1,8 @@
-
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import InteractiveCoinRow from "@/components/home/InteractiveCoinRow";
+import CoinTabsDetail from "@/components/coin/CoinTabsDetail";
 
 const featuredMuslimCoins = [
   {
@@ -80,46 +80,50 @@ const MuslimCoins = () => {
               
               <TabsContent value="fatimid" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Fatimid Dinar</h2>
-                <p className="mb-4">
-                  The Fatimid Caliphate produced some of the finest gold dinars of the medieval Islamic world,
-                  with distinctive concentric circle inscriptions and precise weight standards.
-                </p>
-                <p>
-                  More detailed analysis will be provided in upcoming updates.
-                </p>
+                <CoinTabsDetail
+                  context={`The Fatimid Caliphate, a Shi’a Islamic dynasty, emerged in 909 CE and by the 11th century had become a dominant force across North Africa and the Levant. Cairo, under Fatimid control, rivaled Baghdad as a political and cultural capital. By the time the First Crusade began in 1095, the Fatimids were well-established rulers with expansive influence and deep economic ties throughout the Mediterranean.
+
+The Fatimid gold dinar became one of the most respected and trusted coins in the Islamic world and beyond. Its gold purity, weight consistency, and widespread acceptance made it a cornerstone of pre-modern global trade. During the Crusades, these dinars circulated not only in Muslim cities but in Crusader territories, often preferred over local coinage. Their reputation made them a unifying currency in a deeply divided world.`}
+                  religion={`The Fatimid dinar rejects figural imagery entirely, favoring beautifully inscribed Arabic calligraphy. These inscriptions weren’t decorative—they were declarations. Qur’anic verses and the Shahada (“There is no god but God, and Muhammad is the messenger of God”) affirmed the coin’s role as a vehicle of divine truth, transforming money into a medium of faith.
+
+The absence of images aligns with Islamic theological principles, especially within Shi’a traditions, which emphasized the authority of the Imam-Caliph. These coins not only represented wealth but served as pocket-sized statements of spiritual and political identity.`}
+                  political={`Fatimid dinars functioned as tools of statecraft. Their inscriptions proclaimed the caliph’s legitimacy, often including titles such as “Commander of the Faithful” or “God’s Representative on Earth.” In doing so, the coin operated like a broadcast, delivering a message of sovereign rule with every transaction.
+
+Perhaps most interesting is how these coins traveled across religious and political lines. Crusader rulers—despite warring with Islamic powers—accepted Fatimid dinars in their markets. Some Christian states even minted imitations of these dinars, maintaining the Arabic script and religious content for the sake of commercial trust. That’s how powerful these coins were: they overrode ideology in favor of functionality.`}
+                  insight={`The Fatimid dinar isn’t just an artifact—it’s a contradiction pressed in gold. It is at once sacred and secular, religious and economic, sectarian and universal. Its design, intentionally minimalist, makes its message more potent. Where Christian coins bore kings, saints, and crosses, the Fatimid dinar bore only words, but those words carried entire systems of belief and political vision.
+
+In the Crusader context, this coin embodies the paradoxes of the medieval Mediterranean. A Shi’a Islamic coin, used by Christian rulers, copied by Crusader mints, and trusted across enemy lines. Its acceptance by so many different peoples tells us that money, in its purest form, reveals what a society values most—and in this case, it was purity, trust, and divine legitimacy.`}
+                />
               </TabsContent>
               
               <TabsContent value="ayyubid" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Ayyubid Dinar (Saladin)</h2>
-                <p className="mb-4">
-                  Saladin's coins represented his power as the unifier against the Crusader presence, often
-                  featuring inscriptions emphasizing Sunni orthodoxy and legitimacy.
-                </p>
-                <p>
-                  More detailed analysis will be provided in upcoming updates.
-                </p>
+                <CoinTabsDetail
+                  context="More detailed analysis will be provided in upcoming updates."
+                  religion=""
+                  political=""
+                  insight=""
+                />
               </TabsContent>
               
               <TabsContent value="umayyad" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Umayyad Dinar</h2>
-                <p className="mb-4">
-                  Though predating the Crusades, Umayyad gold coinage established standards that influenced
-                  all subsequent Islamic coinages during the Crusader period.
-                </p>
-                <p>
-                  More detailed analysis will be provided in upcoming updates.
-                </p>
+                <CoinTabsDetail
+                  context="More detailed analysis will be provided in upcoming updates."
+                  religion=""
+                  political=""
+                  insight=""
+                />
               </TabsContent>
               
               <TabsContent value="mamluk" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Mamluk Dirham</h2>
-                <p className="mb-4">
-                  The Mamluks, who ultimately expelled the Crusaders from the Levant, produced distinctive
-                  silver dirhams with complex calligraphy and titulature.
-                </p>
-                <p>
-                  More detailed analysis will be provided in upcoming updates.
-                </p>
+                <CoinTabsDetail
+                  context="More detailed analysis will be provided in upcoming updates."
+                  religion=""
+                  political=""
+                  insight=""
+                />
               </TabsContent>
             </Tabs>
           </div>
