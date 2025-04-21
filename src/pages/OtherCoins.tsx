@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import InteractiveCoinRow from "@/components/home/InteractiveCoinRow";
+import CoinTabsDetail from "@/components/coin/CoinTabsDetail";
 
 const featuredOtherCoins = [
   {
@@ -80,46 +81,46 @@ const OtherCoins = () => {
               
               <TabsContent value="norman" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Norman Trilingual Coin</h2>
-                <p className="mb-4">
-                  Roger II's Norman Sicilian coins represent one of the most fascinating examples of 
-                  multicultural expression in medieval numismatics, featuring text in three languages.
-                </p>
-                <p>
-                  More detailed analysis will be provided in upcoming updates.
-                </p>
+                <CoinTabsDetail
+                  context={`Roger II's Norman Sicilian coins represent one of the most fascinating examples of 
+multicultural expression in medieval numismatics, featuring text in three languages.`}
+                  religion="More detailed analysis will be provided in upcoming updates."
+                  political=""
+                  insight=""
+                />
               </TabsContent>
               
               <TabsContent value="ethiopian" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Ethiopian Christian Coin</h2>
-                <p className="mb-4">
-                  The Christian Kingdom of Ethiopia maintained its distinctive Christian identity and coinage 
-                  during the Crusades era, despite being geographically distant from the Holy Land conflicts.
-                </p>
-                <p>
-                  More detailed analysis will be provided in upcoming updates.
-                </p>
+                <CoinTabsDetail
+                  context={`The Christian Kingdom of Ethiopia maintained its distinctive Christian identity and coinage 
+during the Crusades era, despite being geographically distant from the Holy Land conflicts.`}
+                  religion="More detailed analysis will be provided in upcoming updates."
+                  political=""
+                  insight=""
+                />
               </TabsContent>
               
               <TabsContent value="seljuk" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Seljuk Coin (Sultanate of Rum)</h2>
-                <p className="mb-4">
-                  The Seljuk Turks of Rum in Anatolia developed distinctive coinage that reflected their 
-                  position between the Byzantine Empire and the Crusader states.
-                </p>
-                <p>
-                  More detailed analysis will be provided in upcoming updates.
-                </p>
+                <CoinTabsDetail
+                  context={`The Seljuk Turks of Rum in Anatolia developed distinctive coinage that reflected their 
+position between the Byzantine Empire and the Crusader states.`}
+                  religion="More detailed analysis will be provided in upcoming updates."
+                  political=""
+                  insight=""
+                />
               </TabsContent>
               
               <TabsContent value="genoese" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Genoese Trade Coin</h2>
-                <p className="mb-4">
-                  Italian maritime powers like Genoa issued coins that facilitated Mediterranean trade 
-                  networks, which were crucial to sustaining the Crusader states.
-                </p>
-                <p>
-                  More detailed analysis will be provided in upcoming updates.
-                </p>
+                <CoinTabsDetail
+                  context={`Italian maritime powers like Genoa issued coins that facilitated Mediterranean trade 
+networks, which were crucial to sustaining the Crusader states.`}
+                  religion="More detailed analysis will be provided in upcoming updates."
+                  political=""
+                  insight=""
+                />
               </TabsContent>
             </Tabs>
           </div>
@@ -130,3 +131,4 @@ const OtherCoins = () => {
 };
 
 export default OtherCoins;
+
