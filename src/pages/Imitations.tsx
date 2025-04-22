@@ -2,6 +2,32 @@
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
+import CoinTabsDetail from "@/components/coin/CoinTabsDetail";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Card } from "@/components/ui/card";
+
+const coinData = [
+  {
+    title: "Imitation Fatimid Dinar",
+    image: "/lovable-uploads/e06cf278-8959-40b4-b6b9-faec8e53d3c3.png",
+    description: "The only difference between a Fatimid dinar and its crusader copy is the quality of the inscriptions: the Arabic calligraphy on Fatimid coins is precise, proportional, and highly legible, while the inscriptions on the crusader copies are slightly less so. The decision by Crusader rulers to imitate Fatimid dinars was not made lightly. It was a bold, even ironic, choice: Christian leaders minting coins that preserved Islamic inscriptions, Qur'anic phrases, and the names of Muslim caliphs. But in the economic landscape of the eastern Mediterranean, trust was everything—and Fatimid dinars were among the most trusted coins in circulation.",
+  },
+  {
+    title: "Norman Sicilian Coins",
+    image: "/lovable-uploads/51ed9230-d93c-4161-8e76-b73a68d6c1c6.png",
+    description: "The inclusion of Arabic on a Christian coin minted by a Catholic king was a striking choice, but in Norman Sicily, it made perfect sense. Arabic had been the language of administration, science, and commerce under Muslim rule for over a century. Retaining it on coinage signaled continuity, not rupture. It told Muslim subjects that their traditions would not be erased. It told traders across North Africa and the Levant that Sicily was still open for business.",
+  },
+  {
+    title: "Tripoli Coins",
+    image: "/lovable-uploads/3cbb512c-708b-4a2a-af20-a80ed75cddd2.png",
+    description: "What makes the Tripoli coin remarkable is its visual duality. On one side, a bold Christian cross—undeniably a symbol of Crusader rule. On the other, Arabic script. Often, the Arabic inscriptions were phrases like al-Imam al-'Adil ('the just leader') or variations on caliphal titles that had long since disappeared from local rule. This wasn't sloppy minting. It was a precise decision.",
+  },
+  {
+    title: "Crusader Kalima (Islamic Declaration of Faith) Coins",
+    image: "/lovable-uploads/15e3851a-17c9-4bda-a1dd-e23bfbcdfa6a.png",
+    description: "There are two main theories about the inclusion of the Kalima (Islamic declaration of faith). The more compelling theory is that this was a calculated choice. The Kalima was not just text, it was currency language in the Islamic world. Including it signaled that a coin could be trusted, even if its origins were foreign. By inscribing the Kalima, Crusader states tapped into an existing framework of legitimacy.",
+  },
+];
 
 const Imitations = () => {
   return (
@@ -23,55 +49,34 @@ const Imitations = () => {
             
             <Tabs defaultValue="fatimid-imitation" className="w-full">
               <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                <TabsTrigger value="fatimid-imitation">Imitation Fatimid Dinar</TabsTrigger>
-                <TabsTrigger value="sicilian">Norman Sicilian Coins</TabsTrigger>
-                <TabsTrigger value="tripoli">Tripoli Coins</TabsTrigger>
-                <TabsTrigger value="kalima">Crusader Kalima Coins</TabsTrigger>
+                {coinData.map((coin) => (
+                  <TabsTrigger key={coin.title} value={coin.title.toLowerCase().replace(/\s+/g, '-')}>
+                    {coin.title}
+                  </TabsTrigger>
+                ))}
               </TabsList>
               
-              <TabsContent value="fatimid-imitation" className="mt-6 p-4 bg-parchment rounded-md">
-                <h2 className="text-2xl font-medieval mb-4">Crusader Imitation Fatimid Dinar</h2>
-                <p className="mb-4">
-                  Crusader states sometimes minted gold coins that closely resembled Fatimid dinars, 
-                  demonstrating the practical need to produce currency that would be accepted in regional trade.
-                </p>
-                <p>
-                  More detailed analysis will be provided in upcoming updates.
-                </p>
-              </TabsContent>
-              
-              <TabsContent value="sicilian" className="mt-6 p-4 bg-parchment rounded-md">
-                <h2 className="text-2xl font-medieval mb-4">Norman Sicilian Trilingual Coin (Roger II)</h2>
-                <p className="mb-4">
-                  The Norman Kingdom of Sicily under Roger II produced remarkable trilingual coins with 
-                  inscriptions in Arabic, Greek, and Latin, reflecting Sicily's multicultural character.
-                </p>
-                <p>
-                  More detailed analysis will be provided in upcoming updates.
-                </p>
-              </TabsContent>
-              
-              <TabsContent value="tripoli" className="mt-6 p-4 bg-parchment rounded-md">
-                <h2 className="text-2xl font-medieval mb-4">Tripoli Coin with Cross and Arabic Script</h2>
-                <p className="mb-4">
-                  The County of Tripoli minted coins that combined Christian symbols like crosses with 
-                  Arabic inscriptions, creating a hybrid currency that served diverse populations.
-                </p>
-                <p>
-                  More detailed analysis will be provided in upcoming updates.
-                </p>
-              </TabsContent>
-              
-              <TabsContent value="kalima" className="mt-6 p-4 bg-parchment rounded-md">
-                <h2 className="text-2xl font-medieval mb-4">Crusader Coin Bearing the Islamic Kalima</h2>
-                <p className="mb-4">
-                  Some Crusader coinages reproduced Islamic religious declarations (the Kalima or Shahada),
-                  either out of ignorance or as a pragmatic decision to create recognizable currency.
-                </p>
-                <p>
-                  More detailed analysis will be provided in upcoming updates.
-                </p>
-              </TabsContent>
+              {coinData.map((coin) => (
+                <TabsContent 
+                  key={coin.title} 
+                  value={coin.title.toLowerCase().replace(/\s+/g, '-')}
+                  className="mt-6 space-y-4"
+                >
+                  <Card className="overflow-hidden">
+                    <AspectRatio ratio={1}>
+                      <img
+                        src={coin.image}
+                        alt={coin.title}
+                        className="object-contain w-full h-full p-4"
+                      />
+                    </AspectRatio>
+                  </Card>
+                  <div className="bg-parchment p-6 rounded-lg shadow-md">
+                    <h2 className="text-2xl font-medieval mb-4">{coin.title}</h2>
+                    <p className="text-lg mb-4">{coin.description}</p>
+                  </div>
+                </TabsContent>
+              ))}
             </Tabs>
           </div>
         </motion.div>
