@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -34,11 +33,6 @@ const navLinks = [
     name: "Circulation", 
     path: "/circulation",
     color: "bg-blue-500 text-white" 
-  },
-  { 
-    name: "Propaganda", 
-    path: "/propaganda",
-    color: "bg-red-600 text-white" 
   },
   { 
     name: "Interesting Facts", 

@@ -85,14 +85,6 @@ const Index = () => {
           />
           
           <CategoryCard
-            title="Propaganda & Power"
-            description="Analyze how rulers used coins as tools of propaganda and legitimization."
-            imageSrc="/placeholder.svg"
-            link="/propaganda"
-            variant="christian"
-          />
-          
-          <CategoryCard
             title="Other Interesting Coins"
             description="Explore other notable coins that influenced the monetary history of the medieval period."
             imageSrc="/placeholder.svg"

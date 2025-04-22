@@ -11,7 +11,6 @@ import MuslimCoins from "./pages/MuslimCoins";
 import ChristianCoins from "./pages/ChristianCoins";
 import Imitations from "./pages/Imitations";
 import OtherCoins from "./pages/OtherCoins";
-import Propaganda from "./pages/Propaganda";
 import InterestingFacts from "./pages/InterestingFacts";
 import NotFound from "./pages/NotFound";
 
@@ -31,7 +30,6 @@ const App = () => (
             <Route path="/christian-coins" element={<ChristianCoins />} />
             <Route path="/imitations" element={<Imitations />} />
             <Route path="/other-coins" element={<OtherCoins />} />
-            <Route path="/propaganda" element={<Propaganda />} />
             <Route path="/interesting-facts" element={<InterestingFacts />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
