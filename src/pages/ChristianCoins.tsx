@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
@@ -82,47 +81,40 @@ const ChristianCoins = () => {
               <TabsContent value="kingdom-jerusalem" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Cross Denier of the Kingdom of Jerusalem</h2>
                 <CoinTabsDetail
-                  context={`The Cross Denier was one of the most iconic coins of the Crusader states, featuring a prominent cross design that symbolized Christian rule in Jerusalem.
-This coin was widely circulated among Crusaders and local populations, reflecting the Christian kingdom's efforts to establish its own monetary identity in the Holy Land.
-Its simple yet powerful imagery—centered on the cross—made it easily identifiable and a daily reminder of the religious mission of the Crusaders.`}
-                  religion={`The presence of the cross was a clear assertion of Christianity in regions once dominated by Islamic or Byzantine rulers.
-Inscriptions often referred to Christ or Christian leaders, highlighting the claim to religious legitimacy in the Crusader state.
-These coins reinforced Christian values and the authority of the Latin church in Jerusalem among both Crusaders and local converts.`}
-                  political={`The issue of a unique denier marked the independence and sovereignty of the Kingdom of Jerusalem.
-Rulers used coinage to assert their claim over the land, and the silver content was an important part of local and regional trade.
-Control over coin production—especially the right to mint with Christian symbology—was a critical aspect of Crusader state power.`}
-                  insight={`The Cross Denier is emblematic of the way Crusaders used currency to stake both their economic presence and their ideological intentions.
-Its widespread use by diverse peoples shows how religious and political identity could be reinforced (or even challenged) through the simple medium of a coin.`}
+                  context={`After the First Crusade captured Jerusalem in 1099, Latin Christians established the Kingdom of Jerusalem as a symbol of divine victory and a stronghold of Western Christendom in the Levant. Among the many challenges they faced was the need to build an economy that could sustain military campaigns, supply cities, and facilitate trade across religious and linguistic boundaries. Coinage was not a side project. It was central to statecraft. The Cross Denier, a small silver coin, was modeled after French deniers but adapted for the Crusader world. It circulated across a land with Arabic-speaking Muslims, Greek-speaking Christians, Armenian communities, and Latin Crusaders. The Kingdom of Jerusalem minted it to declare not only economic stability but also theological certainty. This was Christian land now, and the coin said so with every transaction.`}
+                  religion={`The design placed a bold Christian cross at the center of the coin. There were no saints, no kings, just the cross—simple, unmistakable, and unyielding. This choice was deliberate. In the Holy Land, where Islamic coins featured flowing Arabic script and Qur'anic verses, and Byzantine coins depicted Christ Pantocrator or emperors, this coin planted a different kind of flag. It reduced Christian iconography to its most elemental and universally recognized symbol. This cross was not a decorative feature. It was a theological statement. In the heart of the most contested religious space on earth, it announced that the Latin Church now had the final word. The coin turned the cross into currency, fusing devotion and economy in one powerful image.`}
+                  political={`The coin's circulation served a dual function. It enabled commerce, but also reinforced authority. Every time a soldier received payment, a merchant made a sale, or a tax collector accepted dues, the coin served as a miniature proclamation of Crusader rule. Its wide use reflected the effectiveness of this messaging. Even those who did not identify with its religious symbolism still accepted it because it worked.`}
+                  insight={`The Cross Denier captures one of the most revealing contradictions of Crusader rule. It was meant to symbolize triumph, permanence, and spiritual clarity. Yet its success depended on its ability to be used by people who might not share its message. This coin is not just an artifact of conquest. It is a lesson in negotiation between faith and pragmatism, between declaration and diplomacy.`}
                 />
               </TabsContent>
               
               <TabsContent value="antioch" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Denier of Bohemond III (Antioch)</h2>
                 <CoinTabsDetail
-                  context="More detailed analysis will be provided in upcoming updates."
-                  religion=""
-                  political=""
-                  insight=""
+                  context={`Antioch was one of the most important Crusader cities, sitting at the nexus of East and West, Islam and Christianity, Latin and Greek. Its strategic location meant it was always under pressure, both from external Muslim forces and from internal cultural and religious divisions. When Bohemond III came to power in the late 12th century, his rule reflected a careful balance of aggression and adaptation. His deniers were minted to assert Latin Christian authority, drawing from French and Norman coinage traditions. But they had to be made legible to a population that was overwhelmingly Greek Orthodox, Arabic-speaking, and long accustomed to Byzantine governance. The denier was a form of code-switching. It declared one thing while operating in the space of another.`}
+                  religion={`The cross was again the centerpiece. It spoke the language of the Crusades and of militant Christian faith in a city reclaimed for God. Yet, unlike the coins of Jerusalem, Antioch's deniers often coexisted with older Byzantine coins still in circulation. The Latin cross did not erase the city's past. Instead, it sat alongside it, insisting on a new reality even as old loyalties remained. For Bohemond, minting this coin was a form of religious diplomacy. It allowed him to stake a claim without eliminating the population's historical memory. The coin asked people to believe in Latin rule, even as their faith traditions remained closer to Constantinople than to Rome.`}
+                  political={`The denier functioned as a tool of unification, even as it proclaimed division. In a city where religious and ethnic boundaries cut across neighborhoods and marketplaces, a common currency was one of the few tools Bohemond had to assert control. The coin was more than a medium of exchange. It was a device for building consensus, or at least compliance. Its Latin inscriptions and Crusader imagery may have alienated some, but its material value brought it into everyday life.`}
+                  insight={`Bohemond's denier is not just a Crusader coin. It is a study in strategy. It shows how leaders used currency not only to project power but to embed it into the fabric of life. It reminds us that coins don't just reflect power. They help create it.`}
                 />
               </TabsContent>
               
               <TabsContent value="constantinople" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Coins of the Latin Kingdom of Constantinople</h2>
                 <CoinTabsDetail
-                  context="More detailed analysis will be provided in upcoming updates."
-                  religion=""
-                  political=""
-                  insight=""
+                  context={`The Latin Empire of Constantinople was born not out of divine providence but out of betrayal. The Fourth Crusade, originally aimed at Egypt, was diverted and ultimately culminated in the sack of Constantinople in 1204. What followed was a deeply awkward and unsustainable experiment in Western rule over a deeply Eastern city. The coins minted by the Latin Empire reflect this contradiction. They often borrowed the formats of Byzantine currency, such as thin flans and concave shapes, but repurposed them with Latin inscriptions and Western Christian imagery. These coins were not designed to integrate. They were designed to overwrite.`}
+                  religion={`Religiously, the coins were part of a campaign to replace Orthodoxy with Catholicism. They showed crosses, saints rendered in Western styles, and inscriptions in Latin. This was not subtle. It was a visual replacement. Where once Christ Pantocrator reigned on Byzantine coins, now a Latin cross or Madonna made a different claim. The coin became a battleground. Every symbol chosen, every phrase inscribed, was a declaration of which branch of Christianity now claimed supremacy. This was theological warfare rendered in metal.`}
+                  political={`Politically, these coins had to function in a city still filled with Greeks. They had to pay soldiers, fund reconstruction, and facilitate trade. Yet, their design made clear that this was no longer a Byzantine space. The coins were both necessary and alienating. Their circulation marks a moment where currency was used not to bridge cultures, but to enforce separation. Yet, over time, economic pragmatism demanded concessions. Later Latin coins became more Byzantine in appearance again, signaling the limits of conquest when money had to flow.`}
+                  insight={`These coins embody the contradiction at the heart of the Latin Empire. They were intended to unify under a new order, but they also alienated the very population they were meant to serve. They reveal the limits of imposed rule and the ways in which money can become a site of resistance as well as authority.`}
                 />
               </TabsContent>
               
               <TabsContent value="richard" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Coin of Richard I (the Lionheart)</h2>
                 <CoinTabsDetail
-                  context="More detailed analysis will be provided in upcoming updates."
-                  religion=""
-                  political=""
-                  insight=""
+                  context={`Richard I was a king, a warrior, and considered a legend. However, not a ruler of any Crusader state. Yet his coins, minted in England, carried tremendous symbolic weight during the Third Crusade. Soldiers, pilgrims, and merchants carried his silver with them into the Levant, making his coinage a kind of traveling ambassador. These coins became tokens of Western solidarity. They were not just currency—they were relics of commitment, small pieces of the Christian West embedded in the economy of the East.`}
+                  religion={`Richard's coinage featured Christian imagery and Latin inscriptions, asserting his divine right to rule. But in the Crusader context, these coins took on additional meaning. They were symbols of Crusader legitimacy, linking the battlefield to the throne.`}
+                  political={`Though not minted for Crusader governance, Richard's coins functioned as political tools. Their presence in the East signaled the ongoing connection between Latin Christendom and the Crusader states. They reminded allies and enemies alike that the struggle for the Holy Land was not isolated, but it was part of a wider Christian world with deep pockets and powerful kings. Their use in the Levant suggests that coins didn't need to be local to matter. They just needed to be trusted. And Richard's were.`}
+                  insight={`This coin shows how symbols of power travel. It reminds us that money is never just about metal or value. It carries memory, allegiance, and projection. Richard's coin became an artifact of myth and a token not only of kingship but of a broader Christian narrative.`}
                 />
               </TabsContent>
             </Tabs>
@@ -134,4 +126,3 @@ Its widespread use by diverse peoples shows how religious and political identity
 };
 
 export default ChristianCoins;
-
