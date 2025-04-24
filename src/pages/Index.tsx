@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import Hero from "@/components/home/Hero";
@@ -59,6 +58,7 @@ const Index = () => {
             imageSrc="/lovable-uploads/d316ba03-232c-4685-aa9c-c33b9decce4d.png"
             link="/muslim-coins"
             variant="muslim"
+            imageClasses="object-center"
           />
           
           <CategoryCard
@@ -144,4 +144,3 @@ const Index = () => {
 };
 
 export default Index;
-

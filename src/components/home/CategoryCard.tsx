@@ -9,6 +9,7 @@ interface CategoryCardProps {
   imageSrc: string;
   link: string;
   variant?: "muslim" | "christian" | "neutral";
+  imageClasses?: string;
 }
 
 const CategoryCard = ({
@@ -17,6 +18,7 @@ const CategoryCard = ({
   imageSrc,
   link,
   variant = "neutral",
+  imageClasses = "",
 }: CategoryCardProps) => {
   return (
     <Link to={link}>
@@ -34,7 +36,10 @@ const CategoryCard = ({
           <img
             src={imageSrc}
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            className={cn(
+              "w-full h-full object-cover transition-transform duration-500 hover:scale-110",
+              imageClasses
+            )}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         </div>
