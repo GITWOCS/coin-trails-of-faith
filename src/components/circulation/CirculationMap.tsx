@@ -13,8 +13,8 @@ const CirculationMap = () => {
         <AspectRatio ratio={16/10}>
           <div className="relative w-full h-full">
             <img 
-              src="/lovable-uploads/crusader-map.jpg" 
-              alt="Historical map from the Crusader period"
+              src="/lovable-uploads/f882ad6e-1820-4abc-bf6d-19ee3d820179.png" 
+              alt="Map of the Crusades from 1096-1204"
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/10" />
