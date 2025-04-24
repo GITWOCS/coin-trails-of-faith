@@ -25,11 +25,6 @@ const navLinks = [
     color: "bg-aged text-white" 
   },
   { 
-    name: "Other Coins", 
-    path: "/other-coins",
-    color: "bg-silver text-black" 
-  },
-  { 
     name: "Circulation", 
     path: "/circulation",
     color: "bg-blue-500 text-white" 

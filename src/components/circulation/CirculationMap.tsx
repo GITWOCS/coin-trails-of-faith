@@ -21,25 +21,6 @@ const CirculationMap = () => {
           </div>
         </AspectRatio>
       </Card>
-
-      <div className="grid grid-cols-2 gap-4 pt-4">
-        <div className="flex items-center">
-          <div className="w-4 h-4 rounded-full bg-christian mr-2"></div>
-          <span className="text-sm">Christian Cities/Trade Centers</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-4 h-4 rounded-full bg-muslim mr-2"></div>
-          <span className="text-sm">Muslim Cities/Trade Centers</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-10 h-0.5 bg-aged-dark mr-2 dashed"></div>
-          <span className="text-sm">Land Trade Routes</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-10 h-0.5 bg-blue-500 mr-2 dashed"></div>
-          <span className="text-sm">Maritime Trade Routes</span>
-        </div>
-      </div>
     </div>
   );
 };
