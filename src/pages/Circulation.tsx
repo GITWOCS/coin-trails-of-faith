@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import CoinCard from "@/components/coin/CoinCard";
@@ -9,7 +8,10 @@ const circulationCoins = [
   {
     id: "fatimid-dinar",
     name: "Fatimid Dinar",
-    images: ["/placeholder.svg", "/placeholder.svg"],
+    images: [
+      "/lovable-uploads/1da5c6f9-3eb3-4cd4-b8fb-6f0c374c2092.png",
+      "/lovable-uploads/ff541400-f9b8-4bc2-8cb9-ff68f551f380.png"
+    ],
     material: "Gold",
     date: "10th-12th Century",
     origin: "Fatimid Caliphate",
@@ -30,7 +32,10 @@ const circulationCoins = [
   {
     id: "byzantine-hyperpyron",
     name: "Byzantine Hyperpyron",
-    images: ["/placeholder.svg", "/placeholder.svg"],
+    images: [
+      "/lovable-uploads/42e17fd9-82c8-4977-8636-1be2faf684fb.png",
+      "/lovable-uploads/268e3a5e-20b4-48b2-aa4b-755b8abef807.png"
+    ],
     material: "Gold",
     date: "11th-13th Century",
     origin: "Byzantine Empire",
@@ -51,7 +56,10 @@ const circulationCoins = [
   {
     id: "venetian-grosso",
     name: "Venetian Grosso",
-    images: ["/placeholder.svg", "/placeholder.svg"],
+    images: [
+      "/lovable-uploads/527fc96a-4e74-47ee-97ef-fdce8318dda9.png",
+      "/lovable-uploads/41d0b8f7-5051-45b6-803d-79571a32f028.png"
+    ],
     material: "Silver",
     date: "13th Century",
     origin: "Republic of Venice",
@@ -72,7 +80,10 @@ const circulationCoins = [
   {
     id: "ayyubid-hoards",
     name: "Ayyubid Coinage from Crusader Hoards",
-    images: ["/placeholder.svg", "/placeholder.svg"],
+    images: [
+      "/lovable-uploads/1ea19367-7a6e-48e1-b43f-3cc6e6572d25.png",
+      "/lovable-uploads/1ea19367-7a6e-48e1-b43f-3cc6e6572d25.png"
+    ],
     material: "Gold and Silver",
     date: "12th-13th Century",
     origin: "Ayyubid Sultanate",

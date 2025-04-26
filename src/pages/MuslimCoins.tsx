@@ -1,3 +1,4 @@
+
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
@@ -8,7 +9,8 @@ const featuredMuslimCoins = [
   {
     id: "fatimid-dinar",
     name: "Fatimid Dinar",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/1da5c6f9-3eb3-4cd4-b8fb-6f0c374c2092.png",
+    backImage: "/lovable-uploads/ff541400-f9b8-4bc2-8cb9-ff68f551f380.png",
     era: "10th-12th Century",
     material: "Gold",
     origin: "Fatimid Caliphate",
@@ -17,7 +19,8 @@ const featuredMuslimCoins = [
   {
     id: "ayyubid-dinar",
     name: "Ayyubid Dinar",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/1ea19367-7a6e-48e1-b43f-3cc6e6572d25.png",
+    backImage: "/lovable-uploads/1ea19367-7a6e-48e1-b43f-3cc6e6572d25.png",
     era: "12th-13th Century",
     material: "Gold",
     origin: "Ayyubid Dynasty",
@@ -26,7 +29,8 @@ const featuredMuslimCoins = [
   {
     id: "umayyad-dinar",
     name: "Umayyad Dinar",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/b7fdfeba-e82e-4dc0-a931-b3b89407bf93.png",
+    backImage: "/lovable-uploads/3ad580f0-ddca-4eff-b138-8df43fdec4ca.png",
     era: "7th-8th Century",
     material: "Gold",
     origin: "Umayyad Caliphate",
@@ -35,7 +39,8 @@ const featuredMuslimCoins = [
   {
     id: "mamluk-dirham",
     name: "Mamluk Dirham",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/18f544b4-a376-4095-adb4-9c236fa98dee.png",
+    backImage: "/lovable-uploads/4f7494e2-b5a2-4fc2-81ac-bb85376019aa.png",
     era: "13th-16th Century",
     material: "Silver",
     origin: "Mamluk Sultanate",
