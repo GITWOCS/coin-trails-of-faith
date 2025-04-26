@@ -70,8 +70,12 @@ const CoinDetail = ({ open, onOpenChange, coin }: CoinDetailProps) => {
                 className="w-full h-full relative preserve-3d"
                 animate={{ rotateY: isFlipped ? 180 : 0 }}
                 transition={{ duration: 0.6 }}
+                style={{ transformStyle: "preserve-3d" }}
               >
-                <div className="absolute w-full h-full backface-hidden">
+                <div 
+                  className="absolute w-full h-full backface-hidden" 
+                  style={{ backfaceVisibility: "hidden" }}
+                >
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={`front-${currentImageIndex}`}
@@ -93,7 +97,10 @@ const CoinDetail = ({ open, onOpenChange, coin }: CoinDetailProps) => {
                 
                 <div 
                   className="absolute w-full h-full backface-hidden"
-                  style={{ transform: 'rotateY(180deg)' }}
+                  style={{ 
+                    backfaceVisibility: "hidden", 
+                    transform: 'rotateY(180deg)' 
+                  }}
                 >
                   {coin.images.length > 1 ? (
                     <img
@@ -222,16 +229,6 @@ const CoinDetail = ({ open, onOpenChange, coin }: CoinDetailProps) => {
             </Tabs>
           </div>
         </div>
-
-        <style jsx global>{`
-          .preserve-3d {
-            transform-style: preserve-3d;
-          }
-          
-          .backface-hidden {
-            backface-visibility: hidden;
-          }
-        `}</style>
       </DialogContent>
     </Dialog>
   );
