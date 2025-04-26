@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { motion, AnimatePresence } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CoinDetailProps {
   open: boolean;
@@ -32,6 +33,23 @@ interface CoinDetailProps {
 
 const CoinDetail = ({ open, onOpenChange, coin }: CoinDetailProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleNextImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === coin.images.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const handlePrevImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? coin.images.length - 1 : prev - 1
+    );
+  };
+
+  const toggleFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -44,36 +62,75 @@ const CoinDetail = ({ open, onOpenChange, coin }: CoinDetailProps) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <div className="flex flex-col space-y-4">
-            <div className="relative aspect-square bg-black/5 rounded-lg overflow-hidden">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={currentImageIndex}
-                  src={coin.images[currentImageIndex]}
-                  alt={`${coin.name} - image ${currentImageIndex + 1}`}
-                  className="w-full h-full object-contain"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                />
-              </AnimatePresence>
+            <div 
+              className="relative aspect-square bg-black/5 rounded-lg overflow-hidden cursor-pointer"
+              onClick={toggleFlip}
+            >
+              <motion.div
+                className="w-full h-full relative preserve-3d"
+                animate={{ rotateY: isFlipped ? 180 : 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="absolute w-full h-full backface-hidden">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={`front-${currentImageIndex}`}
+                      src={coin.images[currentImageIndex]}
+                      alt={`${coin.name} - obverse`}
+                      className="w-full h-full object-contain"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    />
+                  </AnimatePresence>
+                  <div className="absolute bottom-2 left-0 right-0 flex justify-center">
+                    <div className="bg-black/70 text-white px-3 py-1 rounded-full text-sm">
+                      Obverse (Front) - Click to flip
+                    </div>
+                  </div>
+                </div>
+                
+                <div 
+                  className="absolute w-full h-full backface-hidden"
+                  style={{ transform: 'rotateY(180deg)' }}
+                >
+                  {coin.images.length > 1 ? (
+                    <img
+                      src={coin.images[1]}
+                      alt={`${coin.name} - reverse`}
+                      className="w-full h-full object-contain"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                      <p>Reverse image not available</p>
+                    </div>
+                  )}
+                  <div className="absolute bottom-2 left-0 right-0 flex justify-center">
+                    <div className="bg-black/70 text-white px-3 py-1 rounded-full text-sm">
+                      Reverse (Back) - Click to flip
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              
+              {coin.images.length > 1 && (
+                <>
+                  <button 
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full p-1 hover:bg-black/70"
+                    onClick={(e) => { e.stopPropagation(); handlePrevImage(); }}
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+                  <button 
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full p-1 hover:bg-black/70"
+                    onClick={(e) => { e.stopPropagation(); handleNextImage(); }}
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </>
+              )}
             </div>
-
-            {coin.images.length > 1 && (
-              <div className="flex justify-center space-x-2">
-                {coin.images.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`w-3 h-3 rounded-full ${
-                      currentImageIndex === index
-                        ? "bg-gold"
-                        : "bg-gray-300"
-                    }`}
-                    onClick={() => setCurrentImageIndex(index)}
-                  />
-                ))}
-              </div>
-            )}
 
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/70 p-4 rounded-lg">
@@ -165,6 +222,16 @@ const CoinDetail = ({ open, onOpenChange, coin }: CoinDetailProps) => {
             </Tabs>
           </div>
         </div>
+
+        <style jsx global>{`
+          .preserve-3d {
+            transform-style: preserve-3d;
+          }
+          
+          .backface-hidden {
+            backface-visibility: hidden;
+          }
+        `}</style>
       </DialogContent>
     </Dialog>
   );

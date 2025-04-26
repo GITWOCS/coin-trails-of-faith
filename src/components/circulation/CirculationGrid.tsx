@@ -12,17 +12,25 @@ const CirculationGrid = ({ coins, onCoinClick }: CirculationGridProps) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
       {coins.map((coin) => (
-        <div key={coin.id} className="flex flex-col items-center">
-          <CoinCard
-            name={coin.name}
-            image={coin.images[0]}
-            era={coin.date}
-            material={coin.material}
-            origin={coin.origin}
-            type={coin.material.toLowerCase() === "gold" ? "gold" : "silver"}
-            className="w-48 h-48 mx-auto mb-4"
-            onClick={() => onCoinClick(coin.id)}
-          />
+        <div key={coin.id} className="flex flex-col items-center group">
+          <div className="relative transform transition-all duration-300 group-hover:scale-105">
+            <CoinCard
+              name={coin.name}
+              image={coin.images[0]}
+              backImage={coin.images.length > 1 ? coin.images[1] : undefined}
+              era={coin.date}
+              material={coin.material}
+              origin={coin.origin}
+              type={coin.material.toLowerCase() === "gold" ? "gold" : "silver"}
+              className="w-48 h-48 mx-auto mb-4 cursor-pointer"
+              onClick={() => onCoinClick(coin.id)}
+            />
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="bg-black/70 text-white px-3 py-2 rounded-full text-sm">
+                Click to view details
+              </div>
+            </div>
+          </div>
           <h3 className="text-lg font-medieval text-center">{coin.name}</h3>
           <p className="text-sm text-center text-gray-600">{coin.date}</p>
         </div>
