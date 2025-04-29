@@ -143,4 +143,10 @@
   .subsection-heading {
     @apply text-2xl md:text-3xl font-semibold mb-4 text-center md:text-left;
   }
+  
+  /* Add the keyframe animation that was previously in the style tag */
+  @keyframes rotate-y-180 {
+    from { transform: rotateY(0); }
+    to { transform: rotateY(180deg); }
+  }
 }

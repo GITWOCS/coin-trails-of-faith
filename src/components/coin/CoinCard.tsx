@@ -105,18 +105,7 @@ const CoinCard = ({
         </div>
       </div>
 
-      <style jsx global>{`
-        @keyframes rotate-y-180 {
-          from { transform: rotateY(0); }
-          to { transform: rotateY(180deg); }
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-      `}</style>
+      {/* Replace the problematic style tag with CSS classes defined in index.css */}
     </motion.div>
   );
 };
