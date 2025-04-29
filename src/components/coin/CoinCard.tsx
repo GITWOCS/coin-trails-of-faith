@@ -28,15 +28,19 @@ const CoinCard = ({
 }: CoinCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleFlip = () => {
+  const handleFlip = (e: React.MouseEvent) => {
+    if (onClick) {
+      onClick();
+      return; // If there's an onClick handler, use that instead of flipping
+    }
     setIsFlipped(!isFlipped);
-    if (onClick) onClick();
+    e.stopPropagation();
   };
 
   return (
     <motion.div
       className={cn(
-        "coin-card cursor-pointer",
+        "coin-card cursor-pointer relative",
         type === "silver" && "coin-silver",
         type === "copper" && "bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800",
         className
@@ -44,14 +48,25 @@ const CoinCard = ({
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={handleFlip}
+      style={{
+        perspective: "1000px",
+        transformStyle: "preserve-3d"
+      }}
     >
       <div
         className={cn(
-          "coin-card-inner",
-          isFlipped ? "transform rotate-y-180" : ""
+          "w-full h-full transition-all duration-500 relative",
+          isFlipped ? "rotate-y-180" : ""
         )}
+        style={{
+          transformStyle: "preserve-3d",
+          transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
+        }}
       >
-        <div className="coin-front">
+        <div 
+          className="coin-front absolute w-full h-full rounded-full backface-hidden"
+          style={{ backfaceVisibility: "hidden" }}
+        >
           {image ? (
             <img
               src={image}
@@ -66,7 +81,13 @@ const CoinCard = ({
           )}
         </div>
 
-        <div className="coin-back">
+        <div 
+          className="coin-back absolute w-full h-full rounded-full backface-hidden"
+          style={{ 
+            backfaceVisibility: "hidden",
+            transform: "rotateY(180deg)" 
+          }}
+        >
           {backImage ? (
             <img
               src={backImage}
@@ -83,6 +104,19 @@ const CoinCard = ({
           )}
         </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes rotate-y-180 {
+          from { transform: rotateY(0); }
+          to { transform: rotateY(180deg); }
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+      `}</style>
     </motion.div>
   );
 };

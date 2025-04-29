@@ -12,13 +12,15 @@ const CoinImageViewer = ({ images, name }: CoinImageViewerProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleNextImage = () => {
+  const handleNextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setCurrentImageIndex((prev) => 
       prev === images.length - 1 ? 0 : prev + 1
     );
   };
 
-  const handlePrevImage = () => {
+  const handlePrevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setCurrentImageIndex((prev) => 
       prev === 0 ? images.length - 1 : prev - 1
     );
@@ -32,15 +34,20 @@ const CoinImageViewer = ({ images, name }: CoinImageViewerProps) => {
     <div 
       className="relative aspect-square bg-black/5 rounded-lg overflow-hidden cursor-pointer"
       onClick={toggleFlip}
+      style={{ perspective: "1000px" }}
     >
       <motion.div
-        className="w-full h-full relative preserve-3d"
+        className="w-full h-full relative"
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.6 }}
-        style={{ transformStyle: "preserve-3d" }}
+        style={{ 
+          transformStyle: "preserve-3d",
+          transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          transition: "transform 0.6s"
+        }}
       >
         <div 
-          className="absolute w-full h-full backface-hidden" 
+          className="absolute w-full h-full"
           style={{ backfaceVisibility: "hidden" }}
         >
           <AnimatePresence mode="wait">
@@ -63,7 +70,7 @@ const CoinImageViewer = ({ images, name }: CoinImageViewerProps) => {
         </div>
         
         <div 
-          className="absolute w-full h-full backface-hidden"
+          className="absolute w-full h-full"
           style={{ 
             backfaceVisibility: "hidden", 
             transform: 'rotateY(180deg)' 
@@ -88,17 +95,17 @@ const CoinImageViewer = ({ images, name }: CoinImageViewerProps) => {
         </div>
       </motion.div>
       
-      {images.length > 1 && (
+      {images.length > 1 && !isFlipped && (
         <>
           <button 
             className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full p-1 hover:bg-black/70"
-            onClick={(e) => { e.stopPropagation(); handlePrevImage(); }}
+            onClick={handlePrevImage}
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <button 
             className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full p-1 hover:bg-black/70"
-            onClick={(e) => { e.stopPropagation(); handleNextImage(); }}
+            onClick={handleNextImage}
           >
             <ChevronRight className="h-5 w-5" />
           </button>
