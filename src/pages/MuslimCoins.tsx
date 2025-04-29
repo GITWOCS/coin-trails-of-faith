@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
@@ -9,8 +8,8 @@ const featuredMuslimCoins = [
   {
     id: "umayyad-dinar",
     name: "Umayyad Dinar",
-    image: "/lovable-uploads/10a57663-d3f0-42dc-b57b-88134c368d69.png",
-    backImage: "/lovable-uploads/3b3f4695-81b8-49cf-b616-d11993b2d7fb.png",
+    image: "/lovable-uploads/820d3ee8-1f24-4d88-b480-57f5998365e0.png",
+    backImage: "/lovable-uploads/95a5a453-50a0-404a-b574-d9e279cd0f18.png",
     era: "7th-8th Century",
     material: "Gold",
     origin: "Umayyad Caliphate",
@@ -19,8 +18,8 @@ const featuredMuslimCoins = [
   {
     id: "mamluk-dirham",
     name: "Mamluk Dirham",
-    image: "/lovable-uploads/45904668-840f-4b57-8df1-1f93674334ca.png",
-    backImage: "/lovable-uploads/e39ed1d3-edc7-44d6-a3f3-6e6bd805b536.png",
+    image: "/lovable-uploads/9566e54a-6520-49e0-af6d-5659b5651b28.png",
+    backImage: "/lovable-uploads/7e702135-e323-46a8-a401-ba25caddfac8.png",
     era: "13th-16th Century",
     material: "Silver",
     origin: "Mamluk Sultanate",
@@ -68,20 +67,17 @@ const MuslimCoins = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
               {featuredMuslimCoins.map((coin) => (
-                <div key={coin.id} className="flex flex-col items-center">
-                  <CoinCard
-                    name={coin.name}
-                    image={coin.image}
-                    backImage={coin.backImage}
-                    era={coin.era}
-                    material={coin.material}
-                    origin={coin.origin}
-                    type={coin.type}
-                    className="w-48 h-48 mx-auto mb-4"
-                  />
-                  <h3 className="text-lg font-medieval text-center mt-2">{coin.name}</h3>
-                  <p className="text-sm text-center text-gray-600">{coin.era}</p>
-                </div>
+                <CoinCard
+                  key={coin.id}
+                  name={coin.name}
+                  image={coin.image}
+                  backImage={coin.backImage}
+                  era={coin.era}
+                  material={coin.material}
+                  origin={coin.origin}
+                  type={coin.type}
+                  className="w-48 h-48 mx-auto"
+                />
               ))}
             </div>
           </div>
@@ -150,7 +146,7 @@ The Fatimid gold dinar became one of the most respected and trusted coins in the
                   religion={`The Fatimid dinar rejects figural imagery entirely, favoring beautifully inscribed Arabic calligraphy. These inscriptions weren't decorative—they were declarations. Qur'anic verses and the Shahada ("There is no god but God, and Muhammad is the messenger of God") affirmed the coin's role as a vehicle of divine truth, transforming money into a medium of faith.
 
 The absence of images aligns with Islamic theological principles, especially within Shi'a traditions, which emphasized the authority of the Imam-Caliph. These coins not only represented wealth but served as pocket-sized statements of spiritual and political identity.`}
-                  political={`Fatimid dinars functioned as tools of statecraft. Their inscriptions proclaimed the caliph's legitimacy, often including titles such as "Commander of the Faithful" or "God's Representative on Earth." In doing so, the coin operated like a broadcast, delivering a message of sovereign rule with every transaction.
+                  political={`Fatimid dinars function as tools of statecraft. Their inscriptions proclaimed the caliph's legitimacy, often including titles such as "Commander of the Faithful" or "God's Representative on Earth." In doing so, the coin operated like a broadcast, delivering a message of sovereign rule with every transaction.
 
 Perhaps most interesting is how these coins traveled across religious and political lines. Crusader rulers—despite warring with Islamic powers—accepted Fatimid dinars in their markets. Some Christian states even minted imitations of these dinars, maintaining the Arabic script and religious content for the sake of commercial trust. That's how powerful these coins were: they overrode ideology in favor of functionality.`}
                   insight={`The Fatimid dinar isn't just an artifact—it's a contradiction pressed in gold. It is at once sacred and secular, religious and economic, sectarian and universal. Its design, intentionally minimalist, makes its message more potent. Where Christian coins bore kings, saints, and crosses, the Fatimid dinar bore only words, but those words carried entire systems of belief and political vision.

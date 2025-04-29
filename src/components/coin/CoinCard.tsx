@@ -71,6 +71,7 @@ const CoinCard = ({
             transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
           }}
         >
+          {/* Front of coin (obverse) */}
           <div 
             className="coin-front absolute w-full h-full rounded-full backface-hidden"
             style={{ backfaceVisibility: "hidden" }}
@@ -78,7 +79,7 @@ const CoinCard = ({
             {image ? (
               <img
                 src={image}
-                alt={name}
+                alt={`${name} - obverse`}
                 className="w-full h-full object-cover rounded-full"
               />
             ) : (
@@ -89,6 +90,7 @@ const CoinCard = ({
             )}
           </div>
 
+          {/* Back of coin (reverse) */}
           <div 
             className="coin-back absolute w-full h-full rounded-full backface-hidden"
             style={{ 
@@ -99,7 +101,7 @@ const CoinCard = ({
             {backImage ? (
               <img
                 src={backImage}
-                alt={`Reverse of ${name}`}
+                alt={`${name} - reverse`}
                 className="w-full h-full object-cover rounded-full"
               />
             ) : (
