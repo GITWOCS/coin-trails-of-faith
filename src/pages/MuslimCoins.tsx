@@ -24,7 +24,7 @@ const featuredMuslimCoins = [
     era: "13th-16th Century",
     material: "Silver",
     origin: "Mamluk Sultanate",
-    type: "gold" as const,
+    type: "silver" as const,
   },
   {
     id: "ayyubid-dinar",
