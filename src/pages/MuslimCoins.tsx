@@ -2,18 +2,28 @@
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
-import InteractiveCoinRow from "@/components/home/InteractiveCoinRow";
+import CoinCard from "@/components/coin/CoinCard";
 import CoinTabsDetail from "@/components/coin/CoinTabsDetail";
 
 const featuredMuslimCoins = [
   {
-    id: "fatimid-dinar",
-    name: "Fatimid Dinar",
-    image: "/lovable-uploads/1da5c6f9-3eb3-4cd4-b8fb-6f0c374c2092.png",
-    backImage: "/lovable-uploads/ff541400-f9b8-4bc2-8cb9-ff68f551f380.png",
-    era: "10th-12th Century",
+    id: "umayyad-dinar",
+    name: "Umayyad Dinar",
+    image: "/lovable-uploads/10a57663-d3f0-42dc-b57b-88134c368d69.png",
+    backImage: "/lovable-uploads/3b3f4695-81b8-49cf-b616-d11993b2d7fb.png",
+    era: "7th-8th Century",
     material: "Gold",
-    origin: "Fatimid Caliphate",
+    origin: "Umayyad Caliphate",
+    type: "gold" as const,
+  },
+  {
+    id: "mamluk-dirham",
+    name: "Mamluk Dirham",
+    image: "/lovable-uploads/45904668-840f-4b57-8df1-1f93674334ca.png",
+    backImage: "/lovable-uploads/e39ed1d3-edc7-44d6-a3f3-6e6bd805b536.png",
+    era: "13th-16th Century",
+    material: "Silver",
+    origin: "Mamluk Sultanate",
     type: "gold" as const,
   },
   {
@@ -27,24 +37,14 @@ const featuredMuslimCoins = [
     type: "gold" as const,
   },
   {
-    id: "umayyad-dinar",
-    name: "Umayyad Dinar",
-    image: "/lovable-uploads/b7fdfeba-e82e-4dc0-a931-b3b89407bf93.png",
-    backImage: "/lovable-uploads/3ad580f0-ddca-4eff-b138-8df43fdec4ca.png",
-    era: "7th-8th Century",
+    id: "fatimid-dinar",
+    name: "Fatimid Dinar",
+    image: "/lovable-uploads/1da5c6f9-3eb3-4cd4-b8fb-6f0c374c2092.png",
+    backImage: "/lovable-uploads/ff541400-f9b8-4bc2-8cb9-ff68f551f380.png",
+    era: "10th-12th Century",
     material: "Gold",
-    origin: "Umayyad Caliphate",
+    origin: "Fatimid Caliphate",
     type: "gold" as const,
-  },
-  {
-    id: "mamluk-dirham",
-    name: "Mamluk Dirham",
-    image: "/lovable-uploads/18f544b4-a376-4095-adb4-9c236fa98dee.png",
-    backImage: "/lovable-uploads/4f7494e2-b5a2-4fc2-81ac-bb85376019aa.png",
-    era: "13th-16th Century",
-    material: "Silver",
-    origin: "Mamluk Sultanate",
-    type: "silver" as const,
   },
 ];
 
@@ -59,13 +59,31 @@ const MuslimCoins = () => {
         >
           <h1 className="text-4xl font-medieval text-center mb-8">Muslim Coins</h1>
 
-          {/* Featured Coins Interactive Row */}
+          {/* Featured Coins */}
           <div className="mb-10">
-            <h2 className="text-2xl font-medieval text-center mb-2">Featured Coins</h2>
-            <p className="text-center mb-4 text-gray-700">
-              Hover to pause—click any coin to see both sides and a full analysis!
+            <h2 className="text-2xl font-medieval text-center mb-6">Featured Coins</h2>
+            <p className="text-center mb-6 text-gray-700">
+              Click on any coin to see its reverse side.
             </p>
-            <InteractiveCoinRow coins={featuredMuslimCoins} direction="left" speed={18} />
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+              {featuredMuslimCoins.map((coin) => (
+                <div key={coin.id} className="flex flex-col items-center">
+                  <CoinCard
+                    name={coin.name}
+                    image={coin.image}
+                    backImage={coin.backImage}
+                    era={coin.era}
+                    material={coin.material}
+                    origin={coin.origin}
+                    type={coin.type}
+                    className="w-48 h-48 mx-auto mb-4"
+                  />
+                  <h3 className="text-lg font-medieval text-center mt-2">{coin.name}</h3>
+                  <p className="text-sm text-center text-gray-600">{coin.era}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm shadow-lg rounded-lg p-6">
@@ -75,41 +93,13 @@ const MuslimCoins = () => {
               calligraphy, innovative minting techniques, and important historical context.
             </p>
             
-            <Tabs defaultValue="fatimid" className="w-full">
+            <Tabs defaultValue="umayyad" className="w-full">
               <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                <TabsTrigger value="fatimid">Fatimid Dinar</TabsTrigger>
-                <TabsTrigger value="ayyubid">Ayyubid Dinar</TabsTrigger>
                 <TabsTrigger value="umayyad">Umayyad Dinar</TabsTrigger>
                 <TabsTrigger value="mamluk">Mamluk Dirham</TabsTrigger>
+                <TabsTrigger value="ayyubid">Ayyubid Dinar</TabsTrigger>
+                <TabsTrigger value="fatimid">Fatimid Dinar</TabsTrigger>
               </TabsList>
-              
-              <TabsContent value="fatimid" className="mt-6 p-4 bg-parchment rounded-md">
-                <h2 className="text-2xl font-medieval mb-4">Fatimid Dinar</h2>
-                <CoinTabsDetail
-                  context={`The Fatimid Caliphate, a Shi'a Islamic dynasty, emerged in 909 CE and by the 11th century had become a dominant force across North Africa and the Levant. Cairo, under Fatimid control, rivaled Baghdad as a political and cultural capital. By the time the First Crusade began in 1095, the Fatimids were well-established rulers with expansive influence and deep economic ties throughout the Mediterranean.
-
-The Fatimid gold dinar became one of the most respected and trusted coins in the Islamic world and beyond. Its gold purity, weight consistency, and widespread acceptance made it a cornerstone of pre-modern global trade. During the Crusades, these dinars circulated not only in Muslim cities but in Crusader territories, often preferred over local coinage. Their reputation made them a unifying currency in a deeply divided world.`}
-                  religion={`The Fatimid dinar rejects figural imagery entirely, favoring beautifully inscribed Arabic calligraphy. These inscriptions weren't decorative—they were declarations. Qur'anic verses and the Shahada ("There is no god but God, and Muhammad is the messenger of God") affirmed the coin's role as a vehicle of divine truth, transforming money into a medium of faith.
-
-The absence of images aligns with Islamic theological principles, especially within Shi'a traditions, which emphasized the authority of the Imam-Caliph. These coins not only represented wealth but served as pocket-sized statements of spiritual and political identity.`}
-                  political={`Fatimid dinars functioned as tools of statecraft. Their inscriptions proclaimed the caliph's legitimacy, often including titles such as "Commander of the Faithful" or "God's Representative on Earth." In doing so, the coin operated like a broadcast, delivering a message of sovereign rule with every transaction.
-
-Perhaps most interesting is how these coins traveled across religious and political lines. Crusader rulers—despite warring with Islamic powers—accepted Fatimid dinars in their markets. Some Christian states even minted imitations of these dinars, maintaining the Arabic script and religious content for the sake of commercial trust. That's how powerful these coins were: they overrode ideology in favor of functionality.`}
-                  insight={`The Fatimid dinar isn't just an artifact—it's a contradiction pressed in gold. It is at once sacred and secular, religious and economic, sectarian and universal. Its design, intentionally minimalist, makes its message more potent. Where Christian coins bore kings, saints, and crosses, the Fatimid dinar bore only words, but those words carried entire systems of belief and political vision.
-
-In the Crusader context, this coin embodies the paradoxes of the medieval Mediterranean. A Shi'a Islamic coin, used by Christian rulers, copied by Crusader mints, and trusted across enemy lines. Its acceptance by so many different peoples tells us that money, in its purest form, reveals what a society values most—and in this case, it was purity, trust, and divine legitimacy.`}
-                />
-              </TabsContent>
-              
-              <TabsContent value="ayyubid" className="mt-6 p-4 bg-parchment rounded-md">
-                <h2 className="text-2xl font-medieval mb-4">Ayyubid Dinar (Saladin)</h2>
-                <CoinTabsDetail
-                  context={`The Ayyubid dinar rose to prominence during a turning point in Crusader history: the recapture of Jerusalem in 1187 CE by Salah ad-Din Yusuf ibn Ayyub, better known in the West as Saladin. After nearly 90 years of Latin Christian rule in the city, Saladin's victory marked not only a military achievement but a restoration of Islamic sovereignty over one of Islam's holiest sites. In the aftermath of this victory, Saladin began minting dinars in Jerusalem. This was a powerful gesture signaling that the city was no longer under Latin Christian control. These coins were not just for commerce; they were part of a broader campaign to reclaim the Holy Land ideologically and spiritually. To mint a coin in Jerusalem was to declare, "This land belongs again to God and the Ummah."`}
-                  religion={`Like other Islamic coins of the time, the Ayyubid dinar avoided figural imagery and instead featured beautifully inscribed Arabic script, often quoting from the Qur'an or praising the ruler's divine authority. Saladin's dinars regularly included titles like "al-Malik al-Nasir" (The Victorious King) and sometimes featured the Basmala ("In the name of God, the Most Gracious, the Most Merciful"). These inscriptions were not neutral but were acts of devotion and religious assertion. By circulating coins that reaffirmed God's greatness and the sultan's pious legitimacy, the Ayyubid dynasty was embedding Islamic authority into everyday life, one transaction at a time.`}
-                  political={`The decision to mint coins in newly reclaimed cities, especially Jerusalem, was no small matter. It was a deliberate political act, a signal to both Muslim subjects and Christian enemies that Islamic rule had been restored. These dinars were part of a broader strategy of Islamic state-building, in which governance was legitimized not just through military conquest, but through economic control and religious symbolism. Moreover, the coins tied Saladin's legitimacy to that of the Abbasid caliphate, which still held symbolic spiritual authority in Baghdad. By including the name of the caliph on the coin alongside his own, Saladin positioned himself as a defender and extension of the broader Islamic world, not a regional warlord. This dual recognition helped him consolidate power and unify diverse territories under the Ayyubid banner.`}
-                  insight={`The Ayyubid dinar is not just a coin—it is a restoration, a message, and a claim pressed into gold. It reflects a moment in history when faith, power, and economy converged. After decades of Crusader presence, the Islamic mint in Jerusalem wasn't merely reopening, it was reclaiming sacred geography and inscribing a new narrative. Its inscriptions remind us that coins can be monuments in motion. While Crusader coins often shouted Christian imagery in Muslim-majority regions, the Ayyubid dinar used linguistic elegance and theological assertion to reinforce legitimacy, confidence, and moral clarity. Even in an age of war, it was a coin of consolidation, not reaction. The fact that these coins circulated in both Muslim and Crusader zones, even found in Crusader hoards, shows that their material and monetary value transcended borders. But for those who could read the inscriptions, the message was unmistakable: God has returned to Jerusalem, and so has justice.`}
-                />
-              </TabsContent>
               
               <TabsContent value="umayyad" className="mt-6 p-4 bg-parchment rounded-md">
                 <h2 className="text-2xl font-medieval mb-4">Umayyad Dinar</h2>
@@ -138,6 +128,34 @@ By naming the reigning sultan and often the city of minting (Cairo, Damascus, Al
 
 These dinars were used to pay soldiers, fund the construction of mosques and madrasas (schools), and facilitate pilgrimage to Mecca. Their reach wasn't just monetary, but it was ideological. They were part of the broader Mamluk strategy of cultivating urban Islamic culture, Sunni scholarship, and religious legitimacy.`}
                   insight={`Where earlier Islamic coins often represented aspiration or competition, the Mamluk dinar represents consolidation. It's not trying to define Islamic power, but it's asserting that Islamic power has been restored and stabilized. The coin's inscriptions, rich in religious and honorific language, speak to an empire that has nothing to prove but everything to protect. By this point, Crusader states were gone, Mongol threats had been checked, and Cairo was a hub of scholarship and trade. The Mamluk dinar wasn't propaganda. It was confirmation.`}
+                />
+              </TabsContent>
+              
+              <TabsContent value="ayyubid" className="mt-6 p-4 bg-parchment rounded-md">
+                <h2 className="text-2xl font-medieval mb-4">Ayyubid Dinar (Saladin)</h2>
+                <CoinTabsDetail
+                  context={`The Ayyubid dinar rose to prominence during a turning point in Crusader history: the recapture of Jerusalem in 1187 CE by Salah ad-Din Yusuf ibn Ayyub, better known in the West as Saladin. After nearly 90 years of Latin Christian rule in the city, Saladin's victory marked not only a military achievement but a restoration of Islamic sovereignty over one of Islam's holiest sites. In the aftermath of this victory, Saladin began minting dinars in Jerusalem. This was a powerful gesture signaling that the city was no longer under Latin Christian control. These coins were not just for commerce; they were part of a broader campaign to reclaim the Holy Land ideologically and spiritually. To mint a coin in Jerusalem was to declare, "This land belongs again to God and the Ummah."`}
+                  religion={`Like other Islamic coins of the time, the Ayyubid dinar avoided figural imagery and instead featured beautifully inscribed Arabic script, often quoting from the Qur'an or praising the ruler's divine authority. Saladin's dinars regularly included titles like "al-Malik al-Nasir" (The Victorious King) and sometimes featured the Basmala ("In the name of God, the Most Gracious, the Most Merciful"). These inscriptions were not neutral but were acts of devotion and religious assertion. By circulating coins that reaffirmed God's greatness and the sultan's pious legitimacy, the Ayyubid dynasty was embedding Islamic authority into everyday life, one transaction at a time.`}
+                  political={`The decision to mint coins in newly reclaimed cities, especially Jerusalem, was no small matter. It was a deliberate political act, a signal to both Muslim subjects and Christian enemies that Islamic rule had been restored. These dinars were part of a broader strategy of Islamic state-building, in which governance was legitimized not just through military conquest, but through economic control and religious symbolism. Moreover, the coins tied Saladin's legitimacy to that of the Abbasid caliphate, which still held symbolic spiritual authority in Baghdad. By including the name of the caliph on the coin alongside his own, Saladin positioned himself as a defender and extension of the broader Islamic world, not a regional warlord. This dual recognition helped him consolidate power and unify diverse territories under the Ayyubid banner.`}
+                  insight={`The Ayyubid dinar is not just a coin—it is a restoration, a message, and a claim pressed into gold. It reflects a moment in history when faith, power, and economy converged. After decades of Crusader presence, the Islamic mint in Jerusalem wasn't merely reopening, it was reclaiming sacred geography and inscribing a new narrative. Its inscriptions remind us that coins can be monuments in motion. While Crusader coins often shouted Christian imagery in Muslim-majority regions, the Ayyubid dinar used linguistic elegance and theological assertion to reinforce legitimacy, confidence, and moral clarity. Even in an age of war, it was a coin of consolidation, not reaction. The fact that these coins circulated in both Muslim and Crusader zones, even found in Crusader hoards, shows that their material and monetary value transcended borders. But for those who could read the inscriptions, the message was unmistakable: God has returned to Jerusalem, and so has justice.`}
+                />
+              </TabsContent>
+              
+              <TabsContent value="fatimid" className="mt-6 p-4 bg-parchment rounded-md">
+                <h2 className="text-2xl font-medieval mb-4">Fatimid Dinar</h2>
+                <CoinTabsDetail
+                  context={`The Fatimid Caliphate, a Shi'a Islamic dynasty, emerged in 909 CE and by the 11th century had become a dominant force across North Africa and the Levant. Cairo, under Fatimid control, rivaled Baghdad as a political and cultural capital. By the time the First Crusade began in 1095, the Fatimids were well-established rulers with expansive influence and deep economic ties throughout the Mediterranean.
+
+The Fatimid gold dinar became one of the most respected and trusted coins in the Islamic world and beyond. Its gold purity, weight consistency, and widespread acceptance made it a cornerstone of pre-modern global trade. During the Crusades, these dinars circulated not only in Muslim cities but in Crusader territories, often preferred over local coinage. Their reputation made them a unifying currency in a deeply divided world.`}
+                  religion={`The Fatimid dinar rejects figural imagery entirely, favoring beautifully inscribed Arabic calligraphy. These inscriptions weren't decorative—they were declarations. Qur'anic verses and the Shahada ("There is no god but God, and Muhammad is the messenger of God") affirmed the coin's role as a vehicle of divine truth, transforming money into a medium of faith.
+
+The absence of images aligns with Islamic theological principles, especially within Shi'a traditions, which emphasized the authority of the Imam-Caliph. These coins not only represented wealth but served as pocket-sized statements of spiritual and political identity.`}
+                  political={`Fatimid dinars functioned as tools of statecraft. Their inscriptions proclaimed the caliph's legitimacy, often including titles such as "Commander of the Faithful" or "God's Representative on Earth." In doing so, the coin operated like a broadcast, delivering a message of sovereign rule with every transaction.
+
+Perhaps most interesting is how these coins traveled across religious and political lines. Crusader rulers—despite warring with Islamic powers—accepted Fatimid dinars in their markets. Some Christian states even minted imitations of these dinars, maintaining the Arabic script and religious content for the sake of commercial trust. That's how powerful these coins were: they overrode ideology in favor of functionality.`}
+                  insight={`The Fatimid dinar isn't just an artifact—it's a contradiction pressed in gold. It is at once sacred and secular, religious and economic, sectarian and universal. Its design, intentionally minimalist, makes its message more potent. Where Christian coins bore kings, saints, and crosses, the Fatimid dinar bore only words, but those words carried entire systems of belief and political vision.
+
+In the Crusader context, this coin embodies the paradoxes of the medieval Mediterranean. A Shi'a Islamic coin, used by Christian rulers, copied by Crusader mints, and trusted across enemy lines. Its acceptance by so many different peoples tells us that money, in its purest form, reveals what a society values most—and in this case, it was purity, trust, and divine legitimacy.`}
                 />
               </TabsContent>
             </Tabs>
