@@ -29,8 +29,8 @@ const featuredMuslimCoins = [
   {
     id: "ayyubid-dinar",
     name: "Ayyubid Dinar",
-    image: "/lovable-uploads/1ea19367-7a6e-48e1-b43f-3cc6e6572d25.png",
-    backImage: "/lovable-uploads/1ea19367-7a6e-48e1-b43f-3cc6e6572d25.png",
+    image: "/lovable-uploads/e1d6158d-c2b0-44fe-80f1-ddcec0bb54a8.png",
+    backImage: "/lovable-uploads/7eb0d385-0728-42a3-b04f-dcd9c9f098e1.png",
     era: "12th-13th Century",
     material: "Gold",
     origin: "Ayyubid Dynasty",
@@ -39,8 +39,8 @@ const featuredMuslimCoins = [
   {
     id: "fatimid-dinar",
     name: "Fatimid Dinar",
-    image: "/lovable-uploads/1da5c6f9-3eb3-4cd4-b8fb-6f0c374c2092.png",
-    backImage: "/lovable-uploads/ff541400-f9b8-4bc2-8cb9-ff68f551f380.png",
+    image: "/lovable-uploads/e971a400-9a65-4f8b-82d5-ce28d82131a0.png",
+    backImage: "/lovable-uploads/c50e27d8-2e9a-4fdd-9ac9-7f2dc6e0c56f.png",
     era: "10th-12th Century",
     material: "Gold",
     origin: "Fatimid Caliphate",
