@@ -1,3 +1,4 @@
+
 import Layout from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
@@ -18,8 +19,8 @@ const featuredMuslimCoins = [
   {
     id: "mamluk-dirham",
     name: "Mamluk Dirham",
-    image: "/lovable-uploads/9566e54a-6520-49e0-af6d-5659b5651b28.png",
-    backImage: "/lovable-uploads/7e702135-e323-46a8-a401-ba25caddfac8.png",
+    image: "/lovable-uploads/f6757583-aaa1-4372-8bba-5246d6ecffee.png",
+    backImage: "/lovable-uploads/b9deed32-2868-47aa-8b3a-156b1aead5f7.png",
     era: "13th-16th Century",
     material: "Silver",
     origin: "Mamluk Sultanate",
