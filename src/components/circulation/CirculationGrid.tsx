@@ -25,11 +25,6 @@ const CirculationGrid = ({ coins, onCoinClick }: CirculationGridProps) => {
               className="w-48 h-48 mx-auto mb-4 cursor-pointer"
               onClick={() => onCoinClick(coin.id)}
             />
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="bg-black/70 text-white px-3 py-2 rounded-full text-sm">
-                Click to view details
-              </div>
-            </div>
           </div>
           <h3 className="text-lg font-medieval text-center">{coin.name}</h3>
           <p className="text-sm text-center text-gray-600">{coin.date}</p>

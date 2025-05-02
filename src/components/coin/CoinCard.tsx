@@ -27,16 +27,15 @@ const CoinCard = ({
   onClick,
 }: CoinCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [isEnlarged, setIsEnlarged] = useState(false);
 
   const handleFlip = (e: React.MouseEvent) => {
     if (onClick) {
       onClick();
       return; // If there's an onClick handler, use that instead of flipping
     }
-    setIsFlipped(!isFlipped);
-    setIsEnlarged(!isEnlarged);
+    
     e.stopPropagation();
+    setIsFlipped(!isFlipped);
   };
 
   return (
@@ -46,34 +45,27 @@ const CoinCard = ({
           "coin-card cursor-pointer relative",
           type === "silver" && "coin-silver",
           type === "copper" && "bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800",
-          className,
-          isEnlarged && "z-10"
+          className
         )}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        animate={{ 
-          scale: isEnlarged ? 1.5 : 1,
-          transition: { duration: 0.3 }
-        }}
         onClick={handleFlip}
         style={{
           perspective: "1000px",
           transformStyle: "preserve-3d"
         }}
       >
-        <div
-          className={cn(
-            "w-full h-full transition-all duration-500 relative",
-            isFlipped ? "rotate-y-180" : ""
-          )}
+        <motion.div
+          className="w-full h-full relative"
+          animate={{ rotateY: isFlipped ? 180 : 0 }}
+          transition={{ duration: 0.6 }}
           style={{
             transformStyle: "preserve-3d",
-            transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
           }}
         >
           {/* Front of coin (obverse) */}
           <div 
-            className="coin-front absolute w-full h-full rounded-full backface-hidden"
+            className="coin-front absolute w-full h-full rounded-full"
             style={{ backfaceVisibility: "hidden" }}
           >
             {image ? (
@@ -92,7 +84,7 @@ const CoinCard = ({
 
           {/* Back of coin (reverse) */}
           <div 
-            className="coin-back absolute w-full h-full rounded-full backface-hidden"
+            className="coin-back absolute w-full h-full rounded-full"
             style={{ 
               backfaceVisibility: "hidden",
               transform: "rotateY(180deg)" 
@@ -113,11 +105,8 @@ const CoinCard = ({
               </div>
             )}
           </div>
-        </div>
+        </motion.div>
       </motion.div>
-      
-      <h3 className="text-lg font-medieval text-center mt-2">{name}</h3>
-      <p className="text-sm text-center text-gray-600">{era}</p>
     </div>
   );
 };
