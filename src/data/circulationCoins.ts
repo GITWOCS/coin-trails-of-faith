@@ -50,8 +50,8 @@ export const circulationCoins: CoinData[] = [
     id: "byzantine-hyperpyron",
     name: "Byzantine Hyperpyron",
     images: [
-      "/lovable-uploads/c5c33383-7ca3-4e75-8f6c-43df43dea322.png",
-      "/lovable-uploads/d5a51ca8-1b9f-4512-a357-ed7a647acac1.png"
+      "/lovable-uploads/67d42e0c-503b-44a1-817e-4fe4e3e8dc2e.png",
+      "/lovable-uploads/a2982c82-6fb7-4c8d-ad99-71d91bd73470.png"
     ],
     material: "Gold",
     date: "11th-13th Century",
@@ -74,8 +74,8 @@ export const circulationCoins: CoinData[] = [
     id: "venetian-grosso",
     name: "Venetian Grosso",
     images: [
-      "/lovable-uploads/ab520e8f-0363-485e-99c4-0de4bf7d543e.png",
-      "/lovable-uploads/29dc74f2-08e5-4eda-8809-40e58be47441.png"
+      "/lovable-uploads/15c7259b-a7d7-4a5b-9d71-9ee10ffa494a.png",
+      "/lovable-uploads/9b1a08d7-9857-4ee2-ab6a-dec7496e5705.png"
     ],
     material: "Silver",
     date: "13th Century",
