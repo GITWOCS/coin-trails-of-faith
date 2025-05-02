@@ -9,8 +9,8 @@ const featuredChristianCoins = [
   {
     id: "cross-denier",
     name: "Cross Denier",
-    image: "/lovable-uploads/b7fdfeba-e82e-4dc0-a931-b3b89407bf93.png",
-    backImage: "/lovable-uploads/3ad580f0-ddca-4eff-b138-8df43fdec4ca.png",
+    image: "/lovable-uploads/4b735d91-8e13-4833-93bd-0a68008111e5.png",
+    backImage: "/lovable-uploads/0b49f6d0-29b4-4ba4-8cfc-de54d6982564.png",
     era: "12th Century",
     material: "Silver",
     origin: "Kingdom of Jerusalem",
@@ -19,8 +19,8 @@ const featuredChristianCoins = [
   {
     id: "denier-antioch",
     name: "Denier of Bohemond III",
-    image: "/lovable-uploads/18f544b4-a376-4095-adb4-9c236fa98dee.png",
-    backImage: "/lovable-uploads/4f7494e2-b5a2-4fc2-81ac-bb85376019aa.png",
+    image: "/lovable-uploads/3728a254-fe2e-43f3-b24e-986e8a50f4dc.png",
+    backImage: "/lovable-uploads/f796c6a6-1bc8-4b96-8b24-69077b98eb4f.png",
     era: "12th Century",
     material: "Silver",
     origin: "Antioch",
@@ -29,8 +29,8 @@ const featuredChristianCoins = [
   {
     id: "constantinople-latin",
     name: "Latin Kingdom Constantinople",
-    image: "/lovable-uploads/42e17fd9-82c8-4977-8636-1be2faf684fb.png",
-    backImage: "/lovable-uploads/268e3a5e-20b4-48b2-aa4b-755b8abef807.png",
+    image: "/lovable-uploads/c5c33383-7ca3-4e75-8f6c-43df43dea322.png",
+    backImage: "/lovable-uploads/d5a51ca8-1b9f-4512-a357-ed7a647acac1.png",
     era: "13th Century",
     material: "Gold",
     origin: "Constantinople",
@@ -39,8 +39,8 @@ const featuredChristianCoins = [
   {
     id: "richard-i",
     name: "Coin of Richard I",
-    image: "/lovable-uploads/527fc96a-4e74-47ee-97ef-fdce8318dda9.png",
-    backImage: "/lovable-uploads/41d0b8f7-5051-45b6-803d-79571a32f028.png",
+    image: "/lovable-uploads/ab520e8f-0363-485e-99c4-0de4bf7d543e.png",
+    backImage: "/lovable-uploads/29dc74f2-08e5-4eda-8809-40e58be47441.png",
     era: "Late 12th Century",
     material: "Gold",
     origin: "England & Holy Land",

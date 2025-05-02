@@ -1,3 +1,4 @@
+
 export interface CoinData {
   id: string;
   name: string;
@@ -25,8 +26,8 @@ export const circulationCoins: CoinData[] = [
     id: "fatimid-dinar",
     name: "Fatimid Dinar",
     images: [
-      "/lovable-uploads/1da5c6f9-3eb3-4cd4-b8fb-6f0c374c2092.png",
-      "/lovable-uploads/ff541400-f9b8-4bc2-8cb9-ff68f551f380.png"
+      "/lovable-uploads/e971a400-9a65-4f8b-82d5-ce28d82131a0.png",
+      "/lovable-uploads/c50e27d8-2e9a-4fdd-9ac9-7f2dc6e0c56f.png"
     ],
     material: "Gold",
     date: "10th-12th Century",
@@ -49,8 +50,8 @@ export const circulationCoins: CoinData[] = [
     id: "byzantine-hyperpyron",
     name: "Byzantine Hyperpyron",
     images: [
-      "/lovable-uploads/42e17fd9-82c8-4977-8636-1be2faf684fb.png",
-      "/lovable-uploads/268e3a5e-20b4-48b2-aa4b-755b8abef807.png"
+      "/lovable-uploads/c5c33383-7ca3-4e75-8f6c-43df43dea322.png",
+      "/lovable-uploads/d5a51ca8-1b9f-4512-a357-ed7a647acac1.png"
     ],
     material: "Gold",
     date: "11th-13th Century",
@@ -73,8 +74,8 @@ export const circulationCoins: CoinData[] = [
     id: "venetian-grosso",
     name: "Venetian Grosso",
     images: [
-      "/lovable-uploads/527fc96a-4e74-47ee-97ef-fdce8318dda9.png",
-      "/lovable-uploads/41d0b8f7-5051-45b6-803d-79571a32f028.png"
+      "/lovable-uploads/ab520e8f-0363-485e-99c4-0de4bf7d543e.png",
+      "/lovable-uploads/29dc74f2-08e5-4eda-8809-40e58be47441.png"
     ],
     material: "Silver",
     date: "13th Century",
@@ -97,8 +98,8 @@ export const circulationCoins: CoinData[] = [
     id: "ayyubid-hoards",
     name: "Ayyubid Coinage from Crusader Hoards",
     images: [
-      "/lovable-uploads/1ea19367-7a6e-48e1-b43f-3cc6e6572d25.png",
-      "/lovable-uploads/1ea19367-7a6e-48e1-b43f-3cc6e6572d25.png"
+      "/lovable-uploads/e1d6158d-c2b0-44fe-80f1-ddcec0bb54a8.png",
+      "/lovable-uploads/7eb0d385-0728-42a3-b04f-dcd9c9f098e1.png"
     ],
     material: "Gold and Silver",
     date: "12th-13th Century",
