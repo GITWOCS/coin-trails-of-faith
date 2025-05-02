@@ -8,7 +8,7 @@ const featuredMuslimCoins = [
   {
     id: "umayyad-dinar",
     name: "Umayyad Dinar",
-    image: "/lovable-uploads/820d3ee8-1f24-4d88-b480-57f5998365e0.png",
+    image: "~/src/images/u_back.png",
     backImage: "/lovable-uploads/95a5a453-50a0-404a-b574-d9e279cd0f18.png",
     era: "7th-8th Century",
     material: "Gold",
