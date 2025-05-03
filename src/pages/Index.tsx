@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import Hero from "@/components/home/Hero";
 import CategoryCard from "@/components/home/CategoryCard";
 import TimelineComponent from "@/components/common/TimelineComponent";
-import FeaturedCoinShowcase from "@/components/home/FeaturedCoinShowcase";
+import CoinOfTheDay from "@/components/home/CoinOfTheDay";
 
 const timelineEvents = [
   {
@@ -95,10 +95,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Coin Showcase Section - Replacing the Interactive Map */}
+      {/* Coin of the Day Section - Replacing the Featured Coin Showcase */}
       <section className="bg-white/50 py-16">
         <div className="page-container">
-          <FeaturedCoinShowcase />
+          <CoinOfTheDay />
         </div>
       </section>
 
