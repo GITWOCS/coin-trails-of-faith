@@ -79,7 +79,11 @@ const CoinOfTheDay = () => {
   // Select a coin based on the day of the year
   useEffect(() => {
     const today = new Date();
-    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+    // Fix: Calculate days using milliseconds rather than direct subtraction
+    const startOfYear = new Date(today.getFullYear(), 0, 0);
+    const diff = today.getTime() - startOfYear.getTime();
+    const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+    
     const coinIndex = dayOfYear % coinData.length;
     setCoin(coinData[coinIndex]);
   }, []);
