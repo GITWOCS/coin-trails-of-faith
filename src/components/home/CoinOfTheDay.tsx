@@ -6,14 +6,15 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Info, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { circulationCoins } from "@/data/circulationCoins";
 
 // Sample coin data - in a real app, this would come from an API
 const coinData = [
   {
     id: "fatimid-daily",
     title: "Fatimid Gold Dinar",
-    image: "/lovable-uploads/d316ba03-232c-4685-aa9c-c33b9decce4d.png",
-    backImage: "/lovable-uploads/b9deed32-2868-47aa-8b3a-156b1aead5f7.png",
+    image: "/lovable-uploads/e971a400-9a65-4f8b-82d5-ce28d82131a0.png",
+    backImage: "/lovable-uploads/c50e27d8-2e9a-4fdd-9ac9-7f2dc6e0c56f.png",
     description: "Minted during the height of Fatimid power in Egypt (969-1171), this gold dinar features Kufic script declaring the Islamic faith and the name of the ruling caliph.",
     category: "muslim",
     year: "11th century",
@@ -42,8 +43,8 @@ const coinData = [
   {
     id: "byzantine-daily",
     title: "Byzantine Hyperpyron",
-    image: "/lovable-uploads/3728a254-fe2e-43f3-b24e-986e8a50f4dc.png",
-    backImage: "/lovable-uploads/6c2a747e-0bf3-4cf8-b460-65809e9c7ad7.png",
+    image: "/lovable-uploads/67d42e0c-503b-44a1-817e-4fe4e3e8dc2e.png",
+    backImage: "/lovable-uploads/a2982c82-6fb7-4c8d-ad99-71d91bd73470.png",
     description: "The Byzantine Empire's gold coin featuring Christ Pantocrator, widely used throughout the Mediterranean during the Crusades era.",
     category: "christian",
     year: "12th century",
