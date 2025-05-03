@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import Hero from "@/components/home/Hero";
 import CategoryCard from "@/components/home/CategoryCard";
 import TimelineComponent from "@/components/common/TimelineComponent";
-import InteractiveMapPlaceholder from "@/components/common/InteractiveMapPlaceholder";
+import FeaturedCoinShowcase from "@/components/home/FeaturedCoinShowcase";
 
 const timelineEvents = [
   {
@@ -95,18 +95,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Interactive Circulation Map Section */}
+      {/* Featured Coin Showcase Section - Replacing the Interactive Map */}
       <section className="bg-white/50 py-16">
         <div className="page-container">
-          <h2 className="section-heading">Interactive Circulation Map</h2>
-          <p className="text-center max-w-3xl mx-auto mb-8">
-            Explore the broad circulation and influence of various coins across the medieval Mediterranean and the Crusader world. Drag or zoom to navigate. Coin hotspots will be interactive soon!
-          </p>
-          <div className="flex justify-center">
-            <div className="w-full max-w-4xl h-[400px] rounded-lg overflow-hidden shadow-lg">
-              <InteractiveMapPlaceholder />
-            </div>
-          </div>
+          <FeaturedCoinShowcase />
         </div>
       </section>
 
