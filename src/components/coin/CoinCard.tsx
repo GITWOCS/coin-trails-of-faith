@@ -107,6 +107,9 @@ const CoinCard = ({
           </div>
         </motion.div>
       </motion.div>
+      
+      <h3 className="text-lg font-medieval text-center mt-2">{name}</h3>
+      <p className="text-sm text-center text-gray-600">{era}</p>
     </div>
   );
 };

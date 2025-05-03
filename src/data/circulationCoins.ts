@@ -23,6 +23,30 @@ export interface CoinData {
 
 export const circulationCoins: CoinData[] = [
   {
+    id: "umayyad-dinar",
+    name: "Umayyad Dinar",
+    images: [
+      "/lovable-uploads/b77d9162-8ae7-45c5-95c8-3900af76a12f.png",
+      "/lovable-uploads/6c2a747e-0bf3-4cf8-b460-65809e9c7ad7.png"
+    ],
+    material: "Gold",
+    date: "7th-8th Century",
+    origin: "Umayyad Caliphate",
+    ruler: "ʿAbd al-Malik ibn Marwān",
+    obverse: "The Umayyad dinar features concentric circles of Arabic inscriptions declaring Islamic faith, with no figural imagery, a stark contrast to preceding Byzantine and Sasanian coins.",
+    reverse: "The reverse contains additional Islamic declarations in Arabic script, reinforcing the monotheistic message of Islam.",
+    history: "Introduced around 696-697 CE by Caliph ʿAbd al-Malik as part of his monetary reforms, the Umayyad dinar represented the first purely Islamic coinage, replacing earlier Byzantine-style coins. This innovation marked a significant step in establishing a distinct Islamic identity and breaking with previous imperial systems.",
+    significance: "The Umayyad dinar was revolutionary for being the first major gold coin to bear only text and no images, reflecting Islamic aniconic principles. Its design became the standard for Islamic coinage for centuries. The coin was so trusted for its consistent gold content that it circulated widely beyond Islamic territories, and even influenced European monetary systems. During the Crusades, these coins were sometimes imitated by Christian rulers for use in commerce.",
+    inscriptions: {
+      obverse: "لا إله إلا الله وحده لا شريك له",
+      reverse: "محمد رسول الله",
+      translation: {
+        obverse: "There is no god but God, unique, without equal",
+        reverse: "Muhammad is the messenger of God"
+      }
+    }
+  },
+  {
     id: "fatimid-dinar",
     name: "Fatimid Dinar",
     images: [

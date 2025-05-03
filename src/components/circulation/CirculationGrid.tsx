@@ -26,8 +26,6 @@ const CirculationGrid = ({ coins, onCoinClick }: CirculationGridProps) => {
               onClick={() => onCoinClick(coin.id)}
             />
           </div>
-          <h3 className="text-lg font-medieval text-center">{coin.name}</h3>
-          <p className="text-sm text-center text-gray-600">{coin.date}</p>
         </div>
       ))}
     </div>
