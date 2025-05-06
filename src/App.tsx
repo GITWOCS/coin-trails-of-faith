@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,6 +12,10 @@ import ChristianCoins from "./pages/ChristianCoins";
 import Imitations from "./pages/Imitations";
 import InterestingFacts from "./pages/InterestingFacts";
 import NotFound from "./pages/NotFound";
+import Bibliography from "./pages/Bibliography";
+import Museums from "./pages/Museums";
+import Research from "./pages/Research";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +33,10 @@ const App = () => (
             <Route path="/christian-coins" element={<ChristianCoins />} />
             <Route path="/imitations" element={<Imitations />} />
             <Route path="/interesting-facts" element={<InterestingFacts />} />
+            <Route path="/bibliography" element={<Bibliography />} />
+            <Route path="/museums" element={<Museums />} />
+            <Route path="/research" element={<Research />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

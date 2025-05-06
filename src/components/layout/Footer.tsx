@@ -39,8 +39,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/propaganda" className="text-aged-light hover:text-white transition">
-                  Propaganda in Coins
+                <Link to="/interesting-facts" className="text-aged-light hover:text-white transition">
+                  Interesting Facts
                 </Link>
               </li>
             </ul>
@@ -50,24 +50,24 @@ const Footer = () => {
             <h3 className="text-xl font-medieval mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-aged-light hover:text-white transition">
+                <Link to="/bibliography" className="text-aged-light hover:text-white transition">
                   Bibliography
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-aged-light hover:text-white transition">
+                <Link to="/museums" className="text-aged-light hover:text-white transition">
                   Museums & Collections
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-aged-light hover:text-white transition">
+                <Link to="/research" className="text-aged-light hover:text-white transition">
                   Academic Research
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-aged-light hover:text-white transition">
+                <Link to="/contact" className="text-aged-light hover:text-white transition">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
