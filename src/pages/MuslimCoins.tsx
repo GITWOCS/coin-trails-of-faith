@@ -10,7 +10,7 @@ const featuredMuslimCoins = [
     id: "umayyad-dinar",
     name: "Umayyad Dinar",
     image: "/lovable-uploads/f6757583-aaa1-4372-8bba-5246d6ecffee.png",
-    backImage: "./src/images/u_back.png",
+    backImage: "./images/u_back.png",
     era: "7th-8th Century",
     material: "Gold",
     origin: "Umayyad Caliphate",
